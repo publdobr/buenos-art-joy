@@ -31,27 +31,35 @@ const Gallery = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-playful-yellow/10 via-playful-pink/10 to-playful-blue/10">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-black mb-16 text-center">
+    <section className="py-20 px-4 bg-gradient-to-br from-playful-yellow/20 via-playful-pink/20 to-playful-blue/20 relative overflow-hidden">
+      {/* Decorative shapes */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-playful-red rotate-45 opacity-20 border-thick border-foreground" />
+      <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-playful-purple opacity-20 border-thick border-foreground" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-16 text-center font-archivo" style={{ transform: 'rotate(-1deg)' }}>
           <span className="text-gradient">Галерея</span>
         </h2>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {images.map((image, index) => (
-            <div 
-              key={index}
-              className="aspect-[3/4] rounded-3xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300 shadow-soft"
-              onClick={() => openLightbox(index)}
-            >
-              <img 
-                src={image} 
-                alt={`Gallery image ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {images.map((image, index) => {
+            const rotations = ['rotate(-2deg)', 'rotate(2deg)', 'rotate(-1deg)', 'rotate(1.5deg)'];
+            return (
+              <div 
+                key={index}
+                className="aspect-[3/4] rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:-rotate-3 transition-all duration-300 shadow-block border-thick border-border"
+                style={{ transform: rotations[index] }}
+                onClick={() => openLightbox(index)}
+              >
+                <img 
+                  src={image} 
+                  alt={`Gallery image ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            );
+          })}
         </div>
 
         {/* Lightbox */}
@@ -62,25 +70,25 @@ const Gallery = () => {
                 <img 
                   src={images[selectedImage]} 
                   alt={`Gallery image ${selectedImage + 1}`}
-                  className="w-full h-auto max-h-[90vh] object-contain rounded-3xl"
+                  className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-block border-thick border-border"
                 />
                 
                 {/* Navigation Buttons */}
                 <button
                   onClick={goToPrevious}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/90 flex items-center justify-center hover:scale-110 transition-transform shadow-playful"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block"
                 >
-                  <ChevronLeft className="w-6 h-6 text-foreground" />
+                  <ChevronLeft className="w-6 h-6 text-foreground" strokeWidth={3} />
                 </button>
                 <button
                   onClick={goToNext}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background/90 flex items-center justify-center hover:scale-110 transition-transform shadow-playful"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block"
                 >
-                  <ChevronRight className="w-6 h-6 text-foreground" />
+                  <ChevronRight className="w-6 h-6 text-foreground" strokeWidth={3} />
                 </button>
 
                 {/* Image Counter */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-background/90 font-bold">
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg bg-background border-thick border-border font-bold shadow-doodle font-work-sans">
                   {selectedImage + 1} / {images.length}
                 </div>
               </div>

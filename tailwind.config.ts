@@ -49,16 +49,26 @@ export default {
         },
         playful: {
           pink: "hsl(var(--playful-pink))",
+          "hot-pink": "hsl(var(--playful-hot-pink))",
+          red: "hsl(var(--playful-red))",
           yellow: "hsl(var(--playful-yellow))",
+          "bright-yellow": "hsl(var(--playful-bright-yellow))",
           blue: "hsl(var(--playful-blue))",
+          "bright-blue": "hsl(var(--playful-bright-blue))",
+          cyan: "hsl(var(--playful-cyan))",
+          orange: "hsl(var(--playful-orange))",
+          purple: "hsl(var(--playful-purple))",
           green: "hsl(var(--playful-green))",
-          coral: "hsl(var(--playful-coral))",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        'archivo': ['Archivo Black', 'sans-serif'],
+        'work-sans': ['Work Sans', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
