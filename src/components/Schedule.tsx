@@ -112,7 +112,7 @@ const Schedule = () => {
                   className="p-8 rounded-lg border-thick border-border hover:scale-105 transition-all duration-500 shadow-block"
                   style={{
                     transform: rotations[index],
-                    backgroundColor: "hsl(50, 100%, 90%)", // 🌼 светло-жёлтый фон
+                    backgroundColor: "hsl(340, 100%, 92%)", // 🌸 светло-розовый фон 
                   }}
                 >
                   <h4 className="text-2xl font-black mb-2 font-archivo text-blue-800">
@@ -139,7 +139,7 @@ const Schedule = () => {
             className="text-lg text-center text-foreground font-medium p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full"
             style={{
               transform: "rotate(-0.5deg)",
-              backgroundColor: "hsl(340, 100%, 92%)", // 🌸 светло-розовый фон
+              backgroundColor: "hsl(50, 100%, 90%)", // 🌼 светло-жёлтый фон
             }}
           >
             Расписание занятий скоро опубликуем, но уже можно смело записываться!
