@@ -123,7 +123,11 @@ const Schedule = () => {
                       {item.subtitle}
                     </p>
                   )}
-                  <p className="text-4xl font-black text-white mb-2 font-archivo">
+                  <p className="text-4xl font-black text-white mb-2 font-archivo"
+                      style={{
+                        WebkitTextStroke: '2px black',
+                        WebkitTextFillColor: 'white',
+                      }}>
                     {item.price}
                   </p>
                   <p className="text-lg font-semibold text-foreground font-work-sans">
