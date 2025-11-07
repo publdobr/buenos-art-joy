@@ -1,26 +1,106 @@
-import { Play } from "lucide-react";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import foto5 from "@/assets/foto5.jpeg";
+import foto6 from "@/assets/foto6.jpeg";
+import video1 from "@/assets/video1.mp4";
+import video2 from "@/assets/video2.mp4";
+import video3 from "@/assets/video3.mp4";
 
-const VideoSection = () => {
+const Gallery1 = () => {
+  const media = [
+    { type: "image", src: foto5 },
+    { type: "video", src: video1 },
+    { type: "video", src: video2 },
+    { type: "video", src: video3 },
+    { type: "image", src: foto6 },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToNext = () => setCurrentIndex((prev) => (prev + 1) % media.length);
+  const goToPrevious = () => setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
+
   return (
-    <section id="video" className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-playful-blue/20 via-playful-green/20 to-playful-orange/20 relative overflow-hidden">
-   
-      <div className="max-w-5xl mx-auto relative z-10">
-        <div className="relative aspect-video rounded-lg overflow-hidden shadow-block border-thick border-border bg-background" style={{ transform: 'rotate(-1deg)' }}>
-          {/* Video Placeholder */}
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-playful-pink/30 to-playful-blue/30 p-4">
-            <div className="text-center space-y-4 sm:space-y-6">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 hover:-rotate-12 transition-all duration-500 cursor-pointer shadow-doodle hover:shadow-playful">
-                <Play className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-playful-pink fill-playful-pink ml-1 sm:ml-2" />
-              </div>
-              <p className="text-lg sm:text-xl md:text-2xl font-bold text-foreground font-archivo px-4" style={{ transform: 'rotate(1deg)' }}>
-                Видео скоро появится!
-              </p>
+    <section
+      id="gallery"
+      className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-playful-yellow/20 via-playful-pink/20 to-playful-blue/20 relative overflow-hidden"
+    >
+      <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
+
+        {/* Главное медиа */}
+        <div className="relative w-full max-w-4xl aspect-[3/2] sm:aspect-[4/3] rounded-lg overflow-hidden shadow-block border-thick border-border mb-6 flex items-center justify-center bg-background">
+          {media[currentIndex].type === "image" ? (
+            <img
+              src={media[currentIndex].src}
+              alt={`Gallery item ${currentIndex + 1}`}
+              className="w-full h-full object-cover transition-all duration-500"
+            />
+          ) : (
+            <video
+              controls
+              playsInline
+              className="w-auto h-full max-h-[80vh] rounded-lg object-contain"
+              poster={media[currentIndex].poster}
+            >
+              <source src={media[currentIndex].src} type="video/mp4" />
+              Ваш браузер не поддерживает видео.
+            </video>
+          )}
+
+          {/* Кнопки навигации */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" strokeWidth={3} />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" strokeWidth={3} />
+          </button>
+        </div>
+
+        {/* Миниатюры */}
+        <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-2 justify-center w-full">
+          {media.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden cursor-pointer border-thick transition-all duration-300 ${
+                currentIndex === index
+                  ? "border-border shadow-block scale-105"
+                  : "border-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              {item.type === "image" ? (
+                <img
+                  src={item.src}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <video
+                  className="w-full h-full object-cover"
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={item.src + "#t=0.1"} type="video/mp4" />
+                </video>
+              )}
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* Счетчик */}
+        <div className="mt-4 px-4 py-2 rounded-lg bg-background border-thick border-border font-bold shadow-doodle font-work-sans">
+          {currentIndex + 1} / {media.length}
         </div>
       </div>
     </section>
   );
 };
 
-export default VideoSection;
+export default Gallery1;
