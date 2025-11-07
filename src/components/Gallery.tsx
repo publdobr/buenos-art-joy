@@ -24,25 +24,20 @@ const Gallery = () => {
       setSelectedImage((selectedImage - 1 + images.length) % images.length);
     }
   };
-  return <section className="py-20 px-4 bg-gradient-to-br from-playful-yellow/20 via-playful-pink/20 to-playful-blue/20 relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-playful-red rotate-45 opacity-20 border-thick border-foreground" />
-      <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-playful-purple opacity-20 border-thick border-foreground" />
-      
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-16 text-center font-archivo" style={{
-        transform: 'rotate(-1deg)'
-      }}>
-          <span className="text-gradient text-pink-500">Галерея</span>
+  return <section className="py-20 px-4 bg-playful-pink/30 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <h2 className="text-4xl lg:text-6xl font-black mb-12 text-center font-archivo uppercase">
+          ГАЛЕРЕЯ
         </h2>
 
+        <p className="text-center text-base md:text-lg font-work-sans mb-8 max-w-2xl mx-auto">
+          Ну и самое красочное доказательство: здесь можно увидеть, как это выглядит на самом деле. Никакой постановочности. Просто краски, холсты, вода, брызги… и радость.
+        </p>
+
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
           {images.map((image, index) => {
-          const rotations = ['rotate(-2deg)', 'rotate(2deg)', 'rotate(-1deg)', 'rotate(1.5deg)'];
-          return <div key={index} className="aspect-[3/4] rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:-rotate-3 transition-all duration-300 shadow-block border-thick border-border" style={{
-            transform: rotations[index]
-          }} onClick={() => openLightbox(index)}>
+          return <div key={index} className="aspect-[4/3] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-all duration-300 border-thick border-foreground bg-background" onClick={() => openLightbox(index)}>
                 <img src={image} alt={`Gallery image ${index + 1}`} className="w-full h-full object-cover" />
               </div>;
         })}

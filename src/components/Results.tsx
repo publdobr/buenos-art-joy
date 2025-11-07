@@ -2,43 +2,36 @@ import { Sparkles, Heart, Palette } from "lucide-react";
 const Results = () => {
   const results = [{
     icon: Sparkles,
-    text: "Необходимый сенсорный опыт.",
-    color: "text-playful-yellow",
-    bg: "bg-playful-yellow/10"
+    title: "СЕНСОРНЫЙ ОПЫТ",
+    text: "Гармоничное сенсорное развитие малышей через игру.",
+    iconBg: "bg-playful-pink",
   }, {
     icon: Heart,
-    text: "Удовлетворение в потребности шалить.",
-    color: "text-playful-pink",
-    bg: "bg-playful-pink/10"
+    title: "ВЫСТАВКИ",
+    text: "Для малышей, «наделать» — это дать себе волю, отпустить страх и делать то, что хочется и как хочется.",
+    iconBg: "bg-foreground",
   }, {
     icon: Palette,
-    text: "А ещё — выставки с работами участников и ваша личная коллекция шедевров.",
-    color: "text-playful-blue",
-    bg: "bg-playful-blue/10"
+    title: "КОЛЛЕКЦИЯ",
+    text: "Ваша личная коллекция уникальных шедевров, созданных с любовью.",
+    iconBg: "bg-playful-orange",
   }];
+  
   return <section className="py-20 px-4 bg-background relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-20 right-20 w-16 h-16 bg-playful-cyan opacity-20 border-thick border-foreground" style={{
-      transform: 'rotate(12deg)'
-    }} />
-      <div className="absolute bottom-20 left-20 w-20 h-20 rounded-full bg-playful-bright-yellow opacity-20 border-thick border-foreground" />
-      
       <div className="max-w-6xl mx-auto relative z-10">
-        <h2 style={{
-        transform: 'rotate(1deg)'
-      }} className="text-4xl lg:text-7xl font-black mb-16 text-center font-archivo text-sky-500 md:text-5xl">
-          Результат занятий
+        <h2 className="text-4xl lg:text-6xl font-black mb-16 text-center font-archivo uppercase">
+          ЧТО В ИТОГЕ
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {results.map((result, index) => {
           const Icon = result.icon;
-          const rotations = ['rotate(-1deg)', 'rotate(1deg)', 'rotate(-0.5deg)'];
-          return <div key={index} className={`p-8 rounded-lg ${result.bg} hover:scale-105 hover:-rotate-2 transition-all duration-300 shadow-block border-thick border-border`} style={{
-            transform: rotations[index]
-          }}>
-                <Icon className={`w-16 h-16 mb-6 ${result.color}`} strokeWidth={3} />
-                <p className="text-xl font-semibold text-foreground leading-relaxed font-work-sans">
+          return <div key={index} className="bg-background rounded-lg border-thick border-foreground p-6 hover:scale-105 transition-all duration-300">
+                <div className={`w-16 h-16 ${result.iconBg} rounded-lg border-thick border-foreground flex items-center justify-center mb-4`}>
+                  <Icon className="w-8 h-8 text-background" strokeWidth={3} />
+                </div>
+                <h3 className="text-xl font-black mb-3 font-archivo uppercase">{result.title}</h3>
+                <p className="text-base text-foreground leading-relaxed font-work-sans">
                   {result.text}
                 </p>
               </div>;
