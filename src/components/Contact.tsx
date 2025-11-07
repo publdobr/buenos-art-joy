@@ -46,13 +46,10 @@ const Contact = () => {
             {/* Telegram block */}
             <div className="relative p-8 bg-[hsl(var(--color-yellow))]/30 border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)]">
               <div className="flex flex-col items-center text-center gap-6">
-                <div className="w-20 h-20 flex items-center justify-center bg-[hsl(var(--color-blue))] border-4 border-black">
-                  <Send className="w-10 h-10 text-white" />
-                </div>
                 <div>
-                  <h3 className="mb-3 text-2xl font-semibold">Записаться</h3>
+                  
                   <p className="text-lg mb-6 font-medium">
-                    Напишите мне в Telegram, чтобы узнать подробности и
+                    Напишите нам в Telegram, чтобы узнать подробности и
                     записаться на пробное занятие
                   </p>
                   <Button
@@ -61,7 +58,7 @@ const Contact = () => {
                     onClick={() => window.open(telegramLink, "_blank")}
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    Написать в Telegram
+                    Написать
                   </Button>
                 </div>
               </div>
