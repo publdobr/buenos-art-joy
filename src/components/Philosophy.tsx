@@ -22,8 +22,6 @@ const Philosophy = () => {
             <div className="absolute -bottom-3 -right-3 w-10 h-10 bg-[hsl(var(--color-orange))]" />
             <div className="absolute -top-3 -right-3 w-8 h-8 border-4 border-[hsl(var(--color-pink))] rotate-45" />
 
-            <span className="text-gradient text-purple-600">Философия</span>
-
             <div className="space-y-8 text-center">
               <p
                 className="text-xl md:text-2xl text-foreground leading-relaxed max-w-3xl mx-auto font-work-sans bg-background/60 p-8 rounded-lg shadow-doodle border-thick border-border"
