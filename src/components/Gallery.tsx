@@ -1,66 +1,108 @@
 import { useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import foto1 from "@/assets/foto1.jpeg";
-import foto2 from "@/assets/foto2.jpeg";
-import foto3 from "@/assets/foto3.jpeg";
-import foto4 from "@/assets/foto4.jpeg";
-const Gallery = () => {
-  const images = [foto1, foto2, foto3, foto4];
-  const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const openLightbox = (index: number) => {
-    setSelectedImage(index);
-  };
-  const closeLightbox = () => {
-    setSelectedImage(null);
-  };
-  const goToNext = () => {
-    if (selectedImage !== null) {
-      setSelectedImage((selectedImage + 1) % images.length);
-    }
-  };
-  const goToPrevious = () => {
-    if (selectedImage !== null) {
-      setSelectedImage((selectedImage - 1 + images.length) % images.length);
-    }
-  };
-  return <section id="gallery" className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-playful-yellow/20 via-playful-pink/20 to-playful-blue/20 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto relative z-10">
+import foto6 from "@/assets/foto6.jpeg";
+import foto7 from "@/assets/foto7.jpeg";
+import foto8 from "@/assets/foto8.jpeg";
+import foto9 from "@/assets/foto9.jpeg";
+import foto10 from "@/assets/foto10.jpeg";
+import foto11 from "@/assets/foto10.jpeg";
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {images.map((image, index) => {
-          const rotations = ['rotate(-2deg)', 'rotate(2deg)', 'rotate(-1deg)', 'rotate(1.5deg)'];
-          return <div key={index} className="aspect-[3/4] rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:-rotate-3 transition-all duration-300 shadow-block border-thick border-border" style={{
-            transform: rotations[index]
-          }} onClick={() => openLightbox(index)}>
-                <img src={image} alt={`Gallery image ${index + 1}`} className="w-full h-full object-cover" />
-              </div>;
-        })}
+const VideoSection = () => {
+  const media = [
+    { type: "image", src: foto6 },
+    { type: "image", src: foto7 },
+    { type: "image", src: foto8 },
+    { type: "image", src: foto9 },
+    { type: "image", src: foto10 },
+    { type: "image", src: foto11 },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToNext = () => setCurrentIndex((prev) => (prev + 1) % media.length);
+  const goToPrevious = () => setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
+
+  return (
+    <section
+      id="gallery"
+      className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-playful-yellow/20 via-playful-pink/20 to-playful-blue/20 relative overflow-hidden"
+    >
+      <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
+
+        {/* Главное медиа */}
+        <div className="relative w-full max-w-4xl aspect-[3/2] sm:aspect-[4/3] rounded-lg overflow-hidden shadow-block border-thick border-border mb-6 flex items-center justify-center bg-background">
+          {media[currentIndex].type === "image" ? (
+            <img
+              src={media[currentIndex].src}
+              alt={`Gallery item ${currentIndex + 1}`}
+              className="w-full h-full object-cover transition-all duration-500"
+            />
+          ) : (
+            <video
+              controls
+              playsInline
+              className="w-auto h-full max-h-[80vh] rounded-lg object-contain"
+              poster={media[currentIndex].poster}
+            >
+              <source src={media[currentIndex].src} type="video/mp4" />
+              Ваш браузер не поддерживает видео.
+            </video>
+          )}
+
+          {/* Кнопки навигации */}
+          <button
+            onClick={goToPrevious}
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" strokeWidth={3} />
+          </button>
+          <button
+            onClick={goToNext}
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" strokeWidth={3} />
+          </button>
         </div>
 
-        {/* Lightbox */}
-        <Dialog open={selectedImage !== null} onOpenChange={closeLightbox}>
-          <DialogContent className="max-w-5xl p-0 bg-transparent border-none">
-            {selectedImage !== null && <div className="relative">
-                <img src={images[selectedImage]} alt={`Gallery image ${selectedImage + 1}`} className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-block border-thick border-border" />
-                
-                {/* Navigation Buttons */}
-                <button onClick={goToPrevious} className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block">
-                  <ChevronLeft className="w-6 h-6 text-foreground" strokeWidth={3} />
-                </button>
-                <button onClick={goToNext} className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-background border-thick border-border flex items-center justify-center hover:scale-110 transition-all shadow-doodle hover:shadow-block">
-                  <ChevronRight className="w-6 h-6 text-foreground" strokeWidth={3} />
-                </button>
+        {/* Миниатюры */}
+        <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-2 justify-center w-full">
+          {media.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden cursor-pointer border-thick transition-all duration-300 ${
+                currentIndex === index
+                  ? "border-border shadow-block scale-105"
+                  : "border-transparent opacity-70 hover:opacity-100"
+              }`}
+            >
+              {item.type === "image" ? (
+                <img
+                  src={item.src}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <video
+                  className="w-full h-full object-cover"
+                  muted
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={item.src + "#t=0.1"} type="video/mp4" />
+                </video>
+              )}
+            </div>
+          ))}
+        </div>
 
-                {/* Image Counter */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-lg bg-background border-thick border-border font-bold shadow-doodle font-work-sans">
-                  {selectedImage + 1} / {images.length}
-                </div>
-              </div>}
-          </DialogContent>
-        </Dialog>
+        {/* Счетчик */}
+        <div className="mt-4 px-4 py-2 rounded-lg bg-background border-thick border-border font-bold shadow-doodle font-work-sans">
+          {currentIndex + 1} / {media.length}
+        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
-export default Gallery;
+
+export default VideoSection;
