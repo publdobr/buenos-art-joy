@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative overflow-hidden bg-white"
+      className="py-24 relative overflow-hidden bg-sky-100"
     >
       {/* Decorative elements */}
       <div className="absolute top-10 right-10 w-32 h-32 border-4 border-[hsl(var(--color-pink))] opacity-60 animate-float" />
