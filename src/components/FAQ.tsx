@@ -24,11 +24,11 @@ const FAQ = () => {
   }];
   return <section id="faq" className="py-12 sm:py-16 md:py-20 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 sm:mb-12 md:mb-16 text-center font-archivo" style={{
-        transform: 'rotate(1deg)'
-      }}>
-          <span className="text-gradient text-green-500">Вопросики</span>
-        </h2>
+
+         <h2 className="relative inline-block text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
+            Вопрос / Ответ
+            <div className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-pink))] opacity-60 -rotate-1" />
+          </h2>
 
         <Accordion type="single" collapsible className="space-y-4 sm:space-y-6">
           {faqs.map((faq, index) => {
