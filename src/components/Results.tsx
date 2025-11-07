@@ -4,7 +4,7 @@ const Results = () => {
   const items = [
     {
       icon: Sparkles,
-      title: "Сенсорный опыт",
+      title: "Опыт",
       text: "Необходимый сенсорный опыт",
       color: "var(--color-yellow)",
       accent: "var(--color-cyan)",
