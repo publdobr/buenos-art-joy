@@ -1,13 +1,5 @@
-import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { useState } from "react";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,10 +7,8 @@ const MobileMenu = () => {
   const menuItems = [
     { title: "Главная", href: "#hero" },
     { title: "Философия", href: "#philosophy" },
-    { title: "Результаты", href: "#results" },
-    { title: "Видео", href: "#video" },
-    { title: "Расписание", href: "#schedule" },
-    { title: "Галерея", href: "#gallery" },
+    { title: "Формат", href: "#schedule" },
+    { title: "Цены", href: "#price" },
     { title: "FAQ", href: "#faq" },
     { title: "Контакты", href: "#contact" },
   ];
@@ -33,40 +23,47 @@ const MobileMenu = () => {
 
   return (
     <>
-      <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild>
-          <Button
-            variant="outline"
-            size="icon"
-            className="fixed top-4 right-4 z-50 w-12 h-12 rounded-full border-4 border-black bg-[hsl(var(--color-pink))] hover:bg-[hsl(var(--color-hot-pink))] shadow-[4px_4px_0_hsl(0_0%_0%)] hover:shadow-[6px_6px_0_hsl(0_0%_0%)] transition-all"
-          >
-            <Menu className="h-6 w-6 text-white" strokeWidth={3} />
-          </Button>
-        </SheetTrigger>
-        <SheetContent 
-          side="right" 
-          className="w-[300px] sm:w-[400px] bg-white border-l-4 border-black"
-        >
-          <SheetHeader className="border-b-4 border-black pb-4 mb-6">
-            <SheetTitle className="text-2xl font-black font-archivo uppercase text-[hsl(var(--color-pink))]">
-              Меню
-            </SheetTitle>
-          </SheetHeader>
-          <nav className="flex flex-col space-y-4">
+      {/* Кнопка меню */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed top-6 right-6 z-50 p-3 bg-[hsl(var(--color-pink))] text-white border-4 border-black rounded-full shadow-[4px_4px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_hsl(0_0%_0%)] transition-all"
+        aria-label="Toggle menu"
+      >
+        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+      </button>
+
+      {/* Само меню */}
+      <nav
+        className={`fixed inset-0 z-40 bg-white border-8 border-black transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="relative h-full flex items-center justify-center p-8">
+          <ul className="space-y-6 text-center">
             {menuItems.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => handleClick(item.href)}
-                className="text-left text-lg font-semibold font-work-sans py-3 px-4 rounded-lg border-4 border-black bg-white hover:bg-[hsl(var(--color-yellow))]/20 transition-all hover:translate-x-1 shadow-[2px_2px_0_hsl(0_0%_0%)] hover:shadow-[4px_4px_0_hsl(0_0%_0%)]"
-              >
-                {item.title}
-              </button>
+              <li key={index}>
+                <a
+                  href={item.href}
+                  onClick={() => handleClick(item.href)}
+                  className="block text-4xl md:text-6xl font-black uppercase hover:text-[hsl(var(--color-pink))] transition-colors relative group"
+                >
+                  {item.title}
+                  <div className="absolute -bottom-2 left-0 right-0 h-2 bg-[hsl(var(--color-yellow))] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </a>
+              </li>
             ))}
-          </nav>
-        </SheetContent>
-      </Sheet>
+          </ul>
+
+          {/* Декоративные элементы */}
+          <div className="absolute top-10 left-10 w-20 h-20 border-4 border-[hsl(var(--color-blue))] rounded-full opacity-50 animate-float" />
+          <div className="absolute bottom-10 right-10 w-24 h-24 border-4 border-[hsl(var(--color-pink))] opacity-50 animate-wiggle" />
+          <div className="absolute top-1/3 right-20 w-3 h-3 bg-[hsl(var(--color-yellow))] rounded-full" />
+          <div className="absolute bottom-1/3 left-20 w-3 h-3 bg-[hsl(var(--color-cyan))] rounded-full" />
+        </div>
+      </nav>
     </>
   );
 };
 
 export default MobileMenu;
+
