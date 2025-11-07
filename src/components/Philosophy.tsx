@@ -12,16 +12,11 @@ const Philosophy = () => {
         </h2>
         
         <div className="space-y-8 text-center">
-          <p className="text-2xl md:text-3xl font-bold text-foreground leading-relaxed font-work-sans bg-background/80 p-8 rounded-lg shadow-block border-thick border-border" style={{
-          transform: 'rotate(1deg)'
-        }}>
-            Творим без страха испачкаться самому и испачкать всё вокруг.{" "}
-            <span className="text-playful-pink">Грязный ребёнок — счастливый ребёнок.</span>
-          </p>
-
           <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-3xl mx-auto font-work-sans bg-background/60 p-8 rounded-lg shadow-doodle border-thick border-border" style={{
           transform: 'rotate(-0.5deg)'
         }}>
+            Творим без страха испачкаться самому и испачкать всё вокруг.{" "}
+            <span className="text-playful-pink">Грязный ребёнок — счастливый ребёнок.</span>
             Иногда <span className="font-bold text-playful-blue">ПРОСТО рисуем</span>. 
             Иногда узнаём о <span className="font-bold text-playful-green">новых стилях и художниках</span>. 
             Иногда <span className="font-bold text-playful-orange">рисуем музыку</span>. 
