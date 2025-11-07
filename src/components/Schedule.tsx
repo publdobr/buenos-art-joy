@@ -1,9 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Shirt, DollarSign } from "lucide-react";
+import { Clock, Users, Shirt, DollarSign, ArrowRight } from "lucide-react";
 
 const Schedule = () => {
-  const telegramLink =
-    "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29";
+  const handleTelegramClick = () => {
+    window.open(
+      "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   const info = [
     {
@@ -43,13 +48,13 @@ const Schedule = () => {
       id="schedule"
       className="py-24 relative overflow-hidden bg-white px-4"
     >
-      {/* Decorative elements (из КОД2, но переставлены местами) */}
+      {/* Декор */}
       <div className="absolute top-10 left-20 w-24 h-24 border-4 border-[hsl(var(--color-blue))] opacity-60 animate-float" />
       <div className="absolute bottom-20 right-10 w-32 h-32 border-4 border-[hsl(var(--color-pink))] rounded-full opacity-50 animate-wiggle" />
       <div className="absolute top-40 right-1/4 w-3 h-3 bg-[hsl(var(--color-yellow))] rounded-full" />
 
       <div className="max-w-6xl mx-auto relative z-10 space-y-16">
-        {/* Заголовок "Расписание и цены" в стиле КОД2 */}
+        {/* Заголовок */}
         <div className="text-center space-y-6">
           <h2 className="relative inline-block text-4xl sm:text-5xl md:text-6xl font-black font-archivo">
             Расписание и цены
@@ -68,7 +73,6 @@ const Schedule = () => {
                 className="relative p-6 sm:p-8 bg-white border-thick border-border shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all rounded-lg"
                 style={{ transform: rotations[index] }}
               >
-                {/* Декоративный уголок */}
                 <div
                   className="absolute -top-2 -left-2 w-8 h-8 rounded-full"
                   style={{ backgroundColor: "hsl(var(--color-yellow))" }}
@@ -105,8 +109,11 @@ const Schedule = () => {
               return (
                 <div
                   key={index}
-                  className="p-8 rounded-lg bg-playful-yellow/20 border-thick border-border hover:scale-105 transition-all duration-500 shadow-block"
-                  style={{ transform: rotations[index] }}
+                  className="p-8 rounded-lg border-thick border-border hover:scale-105 transition-all duration-500 shadow-block"
+                  style={{
+                    transform: rotations[index],
+                    backgroundColor: "hsl(50, 100%, 90%)", // 🌼 светло-жёлтый фон
+                  }}
                 >
                   <h4 className="text-2xl font-black mb-2 font-archivo text-blue-800">
                     {item.title}
@@ -127,29 +134,37 @@ const Schedule = () => {
             })}
           </div>
 
+          {/* Розовый блок */}
           <p
-            className="text-lg text-center text-foreground font-medium bg-playful-pink/20 p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full"
-            style={{ transform: "rotate(-0.5deg)" }}
+            className="text-lg text-center text-foreground font-medium p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full"
+            style={{
+              transform: "rotate(-0.5deg)",
+              backgroundColor: "hsl(340, 100%, 92%)", // 🌸 светло-розовый фон
+            }}
           >
             Расписание занятий скоро опубликуем, но уже можно смело записываться!
           </p>
         </div>
 
-        {/* CTA Button */}
-        <div className="text-center">
+        {/* CTA Button — новый стиль */}
+        <div className="animate-in fade-in slide-in-from-bottom duration-700 delay-300 px-4 text-center">
           <Button
+            variant="playful"
             size="lg"
-            className="text-lg px-8 py-6 rounded-lg shadow-block hover:scale-105 hover:shadow-playful transition-all duration-500 bg-playful-blue hover:bg-playful-bright-blue font-bold border-thick border-border"
-            asChild
+            onClick={handleTelegramClick}
+            className="group relative text-sm sm:text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-playful-blue hover:bg-playful-bright-blue border-thick border-border shadow-block hover:scale-105 transition-all duration-500 font-bold text-white"
           >
-            <a href={telegramLink} target="_blank" rel="noopener noreferrer">
-              Записаться на пробное занятие
-            </a>
+            Записаться на пробное занятие
+            <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
+            {/* Декоративная звёздочка */}
+            <div className="hidden sm:block absolute -top-3 -right-3 w-6 h-6 text-[hsl(var(--color-red))] text-3xl">
+              ✦
+            </div>
           </Button>
         </div>
       </div>
 
-      {/* Дополнительный декоративный элемент из КОД2 */}
+      {/* SVG декор */}
       <svg
         className="absolute top-32 right-10 w-32 h-32 opacity-50"
         viewBox="0 0 100 100"
