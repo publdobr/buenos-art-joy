@@ -1,100 +1,194 @@
-import { Button } from "@/components/ui/button";
 import { Clock, Users, Shirt, DollarSign } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const Schedule = () => {
-  const telegramLink = "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записатьс%20я%20на%20пробное%20занятие%20%3A%29";
-  const info = [{
-    icon: Clock,
-    emoji: "✨",
-    text: "Формат: занятия по 2 часа",
-    color: "text-playful-pink"
-  }, {
-    icon: Users,
-    emoji: "👶",
-    text: "Возраст: от 1,5 лет до бесконечности",
-    color: "text-playful-blue"
-  }, {
-    icon: Shirt,
-    emoji: "🎨",
-    text: "Нужно: сменная одежда, которую можно пачкать",
-    color: "text-playful-green"
-  }];
-  const pricing = [{
-    title: "Один человек",
-    subtitle: "(ребёнок или взрослый)",
-    price: "25 $",
-    package: "4 занятия за 80 $"
-  }, {
-    title: "Ребёнок + взрослый",
-    subtitle: "",
-    price: "30 $",
-    package: "4 занятия за 100 $"
-  }];
-  return <section id="schedule" className="py-12 sm:py-16 md:py-20 px-4 bg-background relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="hidden md:block absolute top-20 left-10 w-32 h-32 rounded-full bg-playful-bright-blue opacity-20 border-thick border-foreground" />
-      <div className="hidden md:block absolute bottom-20 right-20 w-28 h-28 bg-playful-orange rotate-12 opacity-20 border-thick border-foreground" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 sm:mb-12 md:mb-16 text-center font-archivo" style={{
-        transform: 'rotate(1deg)'
-      }}>
-          <span className="text-gradient text-indigo-500">Расписание и цены</span>
-        </h2>
+  const telegramLink =
+    "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29";
 
-        {/* Info Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-12 sm:mb-16">
-          {info.map((item, index) => {
-          const Icon = item.icon;
-          const rotations = ['rotate(-1deg)', 'rotate(1deg)', 'rotate(-0.5deg)'];
-          return <div key={index} className="p-4 sm:p-6 rounded-lg bg-background border-thick border-border hover:scale-105 hover:-rotate-2 transition-all duration-300 shadow-doodle hover:shadow-block" style={{
-            transform: rotations[index]
-          }}>
-                <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                  
-                  <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${item.color}`} strokeWidth={3} />
+  const infoItems = [
+    {
+      icon: Clock,
+      title: "Формат",
+      text: "Занятия по 2 часа",
+      color: "var(--color-pink)",
+      accent: "var(--color-yellow)",
+    },
+    {
+      icon: Users,
+      title: "Возраст",
+      text: "От 1,5 лет до бесконечности",
+      color: "var(--color-blue)",
+      accent: "var(--color-cyan)",
+    },
+    {
+      icon: Shirt,
+      title: "Что взять",
+      text: "Сменную одежду, которую можно пачкать",
+      color: "var(--color-green)",
+      accent: "var(--color-pink)",
+    },
+  ];
+
+  const pricing = [
+    {
+      title: "Один человек",
+      subtitle: "(ребёнок или взрослый)",
+      price: "25 $",
+      package: "4 занятия за 80 $",
+    },
+    {
+      title: "Ребёнок + взрослый",
+      subtitle: "",
+      price: "30 $",
+      package: "4 занятия за 100 $",
+    },
+  ];
+
+  return (
+    <section id="schedule" className="py-24 relative overflow-hidden bg-white">
+      {/* Decorative elements (переставлены местами) */}
+      <div className="absolute bottom-20 left-10 w-28 h-28 border-4 border-[hsl(var(--color-orange))] opacity-50 animate-float" />
+      <div className="absolute top-20 right-20 w-32 h-32 border-4 border-[hsl(var(--color-blue))] rounded-full opacity-60 animate-wiggle" />
+      <div className="absolute bottom-10 right-1/4 w-3 h-3 bg-[hsl(var(--color-pink))] rounded-full" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-5xl mx-auto space-y-16">
+          {/* Заголовок */}
+          <div className="text-center space-y-6">
+            <h2 className="relative inline-block font-black text-4xl sm:text-5xl md:text-6xl font-archivo">
+              Расписание и цены
+              <div className="absolute -bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-yellow))] opacity-60 rotate-1" />
+            </h2>
+          </div>
+
+          {/* Info Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {infoItems.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={index}
+                  className="relative p-8 bg-white border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all"
+                >
+                  {/* Decorative corner */}
+                  <div
+                    className="absolute -top-2 -left-2 w-8 h-8 rounded-full"
+                    style={{ backgroundColor: `hsl(${item.color})` }}
+                  />
+
+                  <div className="flex items-center gap-4 mb-4">
+                    <Icon
+                      className="w-8 h-8"
+                      strokeWidth={3}
+                      style={{ color: `hsl(${item.color})` }}
+                    />
+                    <h3 className="text-2xl font-semibold">{item.title}</h3>
+                  </div>
+
+                  <p className="text-base leading-relaxed font-medium">
+                    {item.text}
+                  </p>
+
+                  {/* Декоративные элементы для разнообразия */}
+                  {index === 0 && (
+                    <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-[hsl(var(--color-pink))] rotate-45" />
+                  )}
+                  {index === 1 && (
+                    <div className="absolute -top-3 -right-3 w-6 h-6 border-3 border-[hsl(var(--color-blue))] rounded-full" />
+                  )}
+                  {index === 2 && (
+                    <svg
+                      className="absolute -bottom-2 -right-2 w-8 h-8"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2,10 L10,2 L18,10 L10,18 Z"
+                        fill="hsl(var(--color-green))"
+                      />
+                    </svg>
+                  )}
                 </div>
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-foreground font-work-sans">{item.text}</p>
-              </div>;
-        })}
-        </div>
-
-        {/* Pricing */}
-        <div className="mb-8 sm:mb-12">
-          <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center">
-            <DollarSign className="w-8 h-8 sm:w-10 sm:h-10 text-playful-orange" strokeWidth={3} />
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-black font-archivo text-orange-500">Стоимость:</h3>
+              );
+            })}
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            {pricing.map((item, index) => {
-            const rotations = ['rotate(-1deg)', 'rotate(1deg)'];
-            return <div key={index} className="p-6 sm:p-8 rounded-lg bg-gradient-to-br from-playful-pink/20 to-playful-yellow/20 border-thick border-border hover:border-playful-pink hover:scale-105 transition-all duration-500 shadow-block" style={{
-              transform: rotations[index]
-            }}>
-                  <h4 className="text-xl sm:text-2xl font-black mb-2 font-archivo text-blue-800">{item.title}</h4>
-                  {item.subtitle && <p className="text-sm sm:text-base text-foreground/70 mb-3 sm:mb-4 font-work-sans">{item.subtitle}</p>}
-                  <p className="text-3xl sm:text-4xl font-black text-playful-pink mb-2 sm:mb-3 font-archivo">{item.price}</p>
-                  <p className="text-lg sm:text-xl font-semibold text-foreground font-work-sans">{item.package}</p>
-                </div>;
-          })}
+          {/* Pricing */}
+          <div className="space-y-8">
+            <div className="flex items-center justify-center gap-3">
+              <DollarSign
+                className="w-10 h-10 text-[hsl(var(--color-orange))]"
+                strokeWidth={3}
+              />
+              <h3 className="text-3xl sm:text-4xl font-black font-archivo text-[hsl(var(--color-orange))]">
+                Стоимость
+              </h3>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-8">
+              {pricing.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative p-8 bg-white border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all"
+                >
+                  <h4 className="text-2xl font-black mb-2 font-archivo text-[hsl(var(--color-blue))]">
+                    {item.title}
+                  </h4>
+                  {item.subtitle && (
+                    <p className="text-base text-gray-600 mb-3 font-work-sans">
+                      {item.subtitle}
+                    </p>
+                  )}
+                  <p className="text-4xl font-black text-[hsl(var(--color-pink))] mb-2 font-archivo">
+                    {item.price}
+                  </p>
+                  <p className="text-lg font-semibold">{item.package}</p>
+
+                  {/* Accent doodle */}
+                  {index === 0 && (
+                    <div className="absolute -top-3 -right-3 w-6 h-6 bg-[hsl(var(--color-yellow))] rotate-45" />
+                  )}
+                  {index === 1 && (
+                    <div className="absolute -bottom-3 -right-3 w-8 h-8 border-3 border-[hsl(var(--color-orange))] rounded-full" />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center text-lg bg-[hsl(var(--color-yellow))]/20 border-4 border-black py-6 px-8 rounded-xl shadow-[6px_6px_0_hsl(0_0%_0%)] font-medium">
+              Расписание занятий скоро опубликуем, но уже можно смело
+              записываться!
+            </p>
+
+            <div className="text-center pt-6">
+              <Button
+                size="lg"
+                className="text-xl px-8 py-6 rounded-xl shadow-[6px_6px_0_hsl(0_0%_0%)] border-4 border-black bg-[hsl(var(--color-blue))] hover:bg-[hsl(var(--color-cyan))] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all font-bold"
+                asChild
+              >
+                <a href={telegramLink} target="_blank" rel="noopener noreferrer">
+                  Записаться на пробное занятие
+                </a>
+              </Button>
+            </div>
           </div>
-
-          <p className="text-base sm:text-lg md:text-xl text-center text-foreground mb-6 sm:mb-8 font-medium bg-playful-yellow/20 p-4 sm:p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full" style={{
-          transform: 'rotate(-0.5deg)'
-        }}>
-            Расписание занятий скоро опубликуем, но уже можно смело записываться!
-          </p>
-        </div>
-
-        {/* CTA Button */}
-        <div className="text-center">
-          <Button size="lg" className="text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 rounded-lg shadow-block hover:scale-105 hover:shadow-playful transition-all duration-500 bg-playful-blue hover:bg-playful-bright-blue font-bold border-thick border-border" asChild>
-            <a href={telegramLink} target="_blank" rel="noopener noreferrer">
-              Записаться на пробное занятие
-            </a>
-          </Button>
         </div>
       </div>
-    </section>;
+
+      {/* Дополнительные декоративные линии */}
+      <svg
+        className="absolute top-32 right-10 w-32 h-32 opacity-50"
+        viewBox="0 0 100 100"
+      >
+        <path
+          d="M20,50 Q40,20 60,50 T100,50"
+          stroke="hsl(var(--color-pink))"
+          strokeWidth="4"
+          fill="none"
+          className="animate-float"
+        />
+      </svg>
+    </section>
+  );
 };
+
 export default Schedule;
