@@ -45,7 +45,7 @@ const Contact = () => {
             </div>
 
             {/* Telegram block */}
-            <div className="relative p-8 bg-[hsl(var(--color-yellow))]/30 border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)]">
+            <div className="relative p-8 bg-[hsl(var(--color-yellow))]/60 border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)]">
               <div className="flex flex-col items-center text-center gap-6">
                 <div>
                   
