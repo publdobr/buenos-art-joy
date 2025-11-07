@@ -70,14 +70,14 @@ const Schedule = () => {
             return (
               <div
                 key={index}
-                className="relative p-6 sm:p-8 bg-white border-thick border-border shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all rounded-lg"
+                className="relative text-center p-6 sm:p-8 bg-white border-thick border-border shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all rounded-lg"
                 style={{ transform: rotations[index] }}
               >
                 <div
                   className="absolute -top-2 -left-2 w-8 h-8 rounded-full"
                   style={{ backgroundColor: "hsl(var(--color-yellow))" }}
                 />
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-4 text-center">
                   <Icon
                     className={`w-8 h-8 ${item.color}`}
                     strokeWidth={3}
@@ -86,7 +86,7 @@ const Schedule = () => {
                     {item.text.split(":")[0]}
                   </h3>
                 </div>
-                <p className="text-base font-medium font-work-sans">
+                <p className="text-base font-medium font-work-sans text-center">
                   {item.text.split(":")[1]?.trim()}
                 </p>
               </div>
