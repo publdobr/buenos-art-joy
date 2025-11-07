@@ -5,7 +5,7 @@ import foto7 from "@/assets/foto7.jpeg";
 import foto8 from "@/assets/foto8.jpeg";
 import foto9 from "@/assets/foto9.jpeg";
 import foto10 from "@/assets/foto10.jpeg";
-import foto11 from "@/assets/foto10.jpeg";
+import foto11 from "@/assets/foto11.jpeg";
 
 const VideoSection = () => {
   const media = [
