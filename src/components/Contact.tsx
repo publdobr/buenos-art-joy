@@ -35,7 +35,8 @@ const Contact = () => {
                 <div>
                   <h3 className="mb-3 text-2xl font-semibold">Где</h3>
                   <p className="text-lg leading-relaxed font-medium">
-                    📍 Буэнос-Айрес, угол Federico Lacroze и Alvarez Thomas
+                    📍 Буэнос-Айрес, <a href="https://maps.app.goo.gl/JZVaQyJc229dEBNC9" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground transition-colors"> 
+                      угол Federico Lacroze и Alvarez Thomas </a>
                   </p>
                 </div>
               </div>
