@@ -63,7 +63,7 @@ const Schedule = () => {
         </div>
 
         {/* Info Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
           {info.map((item, index) => {
             const Icon = item.icon;
             const rotations = ["rotate(-1deg)", "rotate(1deg)", "rotate(-0.5deg)"];
@@ -125,7 +125,7 @@ const Schedule = () => {
                   )}
                   <p className="text-4xl font-black text-white mb-2 font-archivo"
                       style={{
-                        WebkitTextStroke: '2px black',
+                        WebkitTextStroke: '1px black',
                         WebkitTextFillColor: 'white',
                       }}>
                     {item.price}
