@@ -37,7 +37,7 @@ const Schedule = () => {
     },
     {
       title: "Ребёнок + взрослый",
-      subtitle: "",
+      subtitle: "(доплата только за материалы)",
       price: "30 $",
       package: "4 занятия за 100 $",
     },
@@ -123,7 +123,7 @@ const Schedule = () => {
                       {item.subtitle}
                     </p>
                   )}
-                  <p className="text-4xl font-black text-playful-pink mb-2 font-archivo">
+                  <p className="text-4xl font-black text-white mb-2 font-archivo">
                     {item.price}
                   </p>
                   <p className="text-lg font-semibold text-foreground font-work-sans">
