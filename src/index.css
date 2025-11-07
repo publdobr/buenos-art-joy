@@ -160,6 +160,40 @@ All colors MUST be HSL.
     animation: spin 20s linear infinite;
   }
 
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-playful);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+
+  }
+
+  .animate-wiggle {
+    animation: wiggle 3s ease-in-out infinite;
+
+  }
+
+
+  .shadow-doodle {
+    box-shadow: var(--shadow-doodle);
+
+  }
+
+  .shadow-playful {
+    box-shadow: var(--shadow-playful);
+  }
+
+  .shadow-block {
+    box-shadow: var(--shadow-block);
+  }
+
+  .border-thick {
+    border-width: 4px;
+  }
+
+
   @keyframes float {
     0%, 100% {
       transform: translateY(0px) rotate(0deg);
