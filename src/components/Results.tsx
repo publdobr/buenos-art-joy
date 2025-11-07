@@ -47,7 +47,7 @@ const Results = () => {
               return (
                 <div
                   key={index}
-                  className="relative p-8 bg-white border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all"
+                  className="relative p-8 bg-white border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all text-center"
                 >
                   {/* Decorative corner */}
                   <div
@@ -55,7 +55,7 @@ const Results = () => {
                     style={{ backgroundColor: `hsl(${item.color})` }}
                   />
 
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex flex-col items-center gap-4 mb-4">
                     <Icon
                       className="w-8 h-8"
                       strokeWidth={3}
