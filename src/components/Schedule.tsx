@@ -105,7 +105,7 @@ const Schedule = () => {
               return (
                 <div
                   key={index}
-                  className="p-8 rounded-lg bg-[hsl(var(--color-yellow))/0.2] border-thick border-border hover:scale-105 transition-all duration-500 shadow-block"
+                  className="p-8 rounded-lg bg-playful-yellow/20 border-thick border-border hover:scale-105 transition-all duration-500 shadow-block"
                   style={{ transform: rotations[index] }}
                 >
                   <h4 className="text-2xl font-black mb-2 font-archivo text-blue-800">
@@ -128,7 +128,7 @@ const Schedule = () => {
           </div>
 
           <p
-            className="text-lg text-center text-foreground font-medium bg-playful-yellow/20 p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full"
+            className="text-lg text-center text-foreground font-medium bg-playful-pink/20 p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full"
             style={{ transform: "rotate(-0.5deg)" }}
           >
             Расписание занятий скоро опубликуем, но уже можно смело записываться!
