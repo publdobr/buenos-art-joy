@@ -30,7 +30,7 @@ const VideoSection = () => {
       <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
 
         {/* Главное медиа */}
-        <div className="relative w-full max-w-4xl aspect-[3/2] sm:aspect-[4/3] rounded-lg overflow-hidden shadow-block border-thick border-border mb-6 flex items-center justify-center bg-background">
+        <div className="relative w-full max-w-2xl aspect-[4/3] sm:aspect-[4/3] rounded-lg overflow-hidden shadow-block border-thick border-border mb-6 flex items-center justify-center bg-background">
           {media[currentIndex].type === "image" ? (
             <img
               src={media[currentIndex].src}
