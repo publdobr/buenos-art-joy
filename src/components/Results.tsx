@@ -18,7 +18,7 @@ const Results = () => {
     },
     {
       icon: Palette,
-      title: "Коллекция",
+      title: "Шедевры",
       text: "Выставки с работами участников и ваша личная коллекция шедевров",
       color: "var(--color-blue)",
       accent: "var(--color-yellow)",
