@@ -21,17 +21,22 @@ const FAQ = () => {
   }];
   return <section className="py-20 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl lg:text-6xl font-black mb-16 text-center font-archivo uppercase">
-          Вопросики
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-16 text-center font-archivo" style={{
+        transform: 'rotate(1deg)'
+      }}>
+          <span className="text-gradient text-green-500">Вопросики</span>
         </h2>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-6">
           {faqs.map((faq, index) => {
-          return <AccordionItem key={index} value={`item-${index}`} className="border-thick border-foreground rounded-lg px-6 bg-background hover:scale-[1.01] transition-all duration-300">
-                <AccordionTrigger className="text-lg font-bold text-foreground hover:no-underline py-6 font-work-sans">
+          const rotations = ['rotate(-0.5deg)', 'rotate(0.5deg)', 'rotate(-0.3deg)', 'rotate(0.7deg)', 'rotate(-0.4deg)', 'rotate(0.3deg)'];
+          return <AccordionItem key={index} value={`item-${index}`} className="border-thick border-border rounded-lg px-6 bg-background shadow-block hover:shadow-playful hover:scale-[1.02] transition-all duration-300" style={{
+            transform: rotations[index]
+          }}>
+                <AccordionTrigger className="text-xl font-bold text-foreground hover:no-underline py-6 font-work-sans">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-foreground pb-6 font-work-sans leading-relaxed">
+                <AccordionContent className="text-lg text-foreground pb-6 font-work-sans">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>;

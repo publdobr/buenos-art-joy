@@ -2,54 +2,43 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Send } from "lucide-react";
 const Contact = () => {
   const telegramLink = "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записатьс%20я%20на%20пробное%20занятие%20%3A%29";
-  
-  return <section className="py-20 px-4 bg-background relative overflow-hidden">
+  return <section className="py-20 px-4 bg-gradient-to-br from-playful-orange/20 via-playful-pink/20 to-playful-yellow/20 relative overflow-hidden">
+      {/* Decorative shapes */}
+      <div className="absolute top-10 right-10 w-28 h-28 bg-playful-cyan rotate-12 opacity-20 border-thick border-foreground" />
+      <div className="absolute bottom-10 left-10 w-36 h-36 rounded-full bg-playful-green opacity-20 border-thick border-foreground" />
+      
       <div className="max-w-4xl mx-auto text-center relative z-10">
-        <h2 className="text-4xl lg:text-6xl font-black mb-12 font-archivo uppercase">
-          КОНТАКТЫ
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-12 font-archivo" style={{
+        transform: 'rotate(-1deg)'
+      }}>
+          <span className="text-gradient text-blue-600">Контакты</span>
         </h2>
 
-        <div className="space-y-6 mb-12">
-          {/* Location Card */}
-          <div className="bg-background border-thick border-foreground rounded-lg p-8">
-            <div className="flex items-start gap-4 mb-4">
-              <div className="w-14 h-14 bg-playful-pink rounded-lg border-thick border-foreground flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-7 h-7 text-background" strokeWidth={3} />
-              </div>
-              <div className="text-left">
-                <h3 className="text-xl font-black mb-2 font-archivo uppercase">ГДЕ</h3>
-                <p className="text-base font-work-sans text-foreground leading-relaxed">
-                  Буэнос-Айрес, угол Federico Lacroze и Alvarez Thomas. Район Colegiales. 5 минут от станции метро. Уютный дом, где живут и работают художники. Можно приехать на велосипеде. Есть парковка. Ближайший автобус — 127, 168.
-                </p>
-              </div>
-            </div>
+        <div className="space-y-8 mb-12">
+          {/* Location */}
+          <div className="flex items-center justify-center gap-4 text-xl md:text-2xl font-semibold bg-background/80 p-6 rounded-lg shadow-doodle border-thick border-border font-work-sans" style={{
+          transform: 'rotate(0.5deg)'
+        }}>
+            <MapPin className="w-8 h-8 text-playful-green flex-shrink-0" strokeWidth={3} />
+            <p className="text-foreground">
+              Буэнос-Айрес, угол Federico Lacroze и Alvarez Thomas
+            </p>
           </div>
 
-          {/* CTA Card */}
-          <div className="bg-playful-yellow/40 border-thick border-foreground rounded-lg p-8">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="w-14 h-14 bg-playful-blue rounded-lg border-thick border-foreground flex items-center justify-center flex-shrink-0">
-                <Send className="w-7 h-7 text-background" strokeWidth={3} />
-              </div>
-              <div className="text-left">
-                <h3 className="text-xl font-black mb-2 font-archivo uppercase">ЗАПИСАТЬСЯ</h3>
-                <p className="text-base font-work-sans text-foreground leading-relaxed">
-                  Очень легко: можно написать в Telegram, указать день и удобное время — и мы договоримся обо всём остальном.
-                </p>
-              </div>
-            </div>
-            
-            <Button size="lg" className="text-lg px-8 py-6 rounded-lg border-thick border-foreground hover:scale-105 transition-all duration-300 bg-playful-yellow hover:bg-playful-bright-yellow text-foreground font-black uppercase w-full md:w-auto" asChild>
-              <a href={telegramLink} target="_blank" rel="noopener noreferrer">
-                ✉ Написать в Telegram
-              </a>
-            </Button>
-          </div>
+          {/* Telegram */}
+          
         </div>
 
+        {/* CTA Button */}
+        <Button size="lg" className="text-xl px-12 py-8 rounded-lg shadow-block hover:scale-105 hover:shadow-playful transition-all duration-500 bg-playful-pink hover:bg-playful-hot-pink font-black border-thick border-border" asChild>
+          <a href={telegramLink} target="_blank" rel="noopener noreferrer">
+            Записаться на пробное занятие
+          </a>
+        </Button>
+
         {/* Footer */}
-        <div className="mt-12 pt-6">
-          <p className="font-work-sans text-sm text-foreground/60">
+        <div className="mt-16 pt-8 border-t-4 border-border">
+          <p className="font-work-sans font-light text-indigo-800">
             Творческое объединение "БЕЗОБРАЗИЕ" © 2025
           </p>
         </div>
