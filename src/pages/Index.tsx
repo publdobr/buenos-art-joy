@@ -6,10 +6,12 @@ import Schedule from "@/components/Schedule";
 import Gallery from "@/components/Gallery";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import MobileMenu from "@/components/MobileMenu";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <MobileMenu />
       <Hero />
       <Philosophy />
       <Results />

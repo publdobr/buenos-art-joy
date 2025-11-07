@@ -24,20 +24,20 @@ const Gallery = () => {
       setSelectedImage((selectedImage - 1 + images.length) % images.length);
     }
   };
-  return <section className="py-20 px-4 bg-gradient-to-br from-playful-yellow/20 via-playful-pink/20 to-playful-blue/20 relative overflow-hidden">
+  return <section id="gallery" className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-playful-yellow/20 via-playful-pink/20 to-playful-blue/20 relative overflow-hidden">
       {/* Decorative shapes */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-playful-red rotate-45 opacity-20 border-thick border-foreground" />
-      <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-playful-purple opacity-20 border-thick border-foreground" />
+      <div className="hidden md:block absolute top-10 left-10 w-20 h-20 bg-playful-red rotate-45 opacity-20 border-thick border-foreground" />
+      <div className="hidden md:block absolute bottom-10 right-10 w-24 h-24 rounded-full bg-playful-purple opacity-20 border-thick border-foreground" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-16 text-center font-archivo" style={{
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 sm:mb-12 md:mb-16 text-center font-archivo" style={{
         transform: 'rotate(-1deg)'
       }}>
           <span className="text-gradient text-pink-500">Галерея</span>
         </h2>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {images.map((image, index) => {
           const rotations = ['rotate(-2deg)', 'rotate(2deg)', 'rotate(-1deg)', 'rotate(1.5deg)'];
           return <div key={index} className="aspect-[3/4] rounded-lg overflow-hidden cursor-pointer hover:scale-105 hover:-rotate-3 transition-all duration-300 shadow-block border-thick border-border" style={{
