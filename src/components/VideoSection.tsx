@@ -6,7 +6,7 @@ import video1 from "@/assets/video1.mp4";
 import video2 from "@/assets/video2.mp4";
 import video3 from "@/assets/video3.mp4";
 
-const Gallery1 = () => {
+const VideoSection = () => {
   const media = [
     { type: "image", src: foto5 },
     { type: "video", src: video1 },
@@ -103,4 +103,4 @@ const Gallery1 = () => {
   );
 };
 
-export default Gallery1;
+export default VideoSection;
