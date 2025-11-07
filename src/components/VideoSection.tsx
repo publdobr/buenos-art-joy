@@ -2,9 +2,9 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import foto5 from "@/assets/foto5.jpeg";
 import foto6 from "@/assets/foto6.jpeg";
-import video1 from "@/assets/video1.MP4";
-import video2 from "@/assets/video2.MP4";
-import video3 from "@/assets/video3.MP4";
+import video1 from "@/assets/video1.mp4";
+import video2 from "@/assets/video2.mp4";
+import video3 from "@/assets/video3.mp4";
 
 const VideoSection = () => {
   const media = [
