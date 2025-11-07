@@ -3,10 +3,7 @@ import { Play } from "lucide-react";
 const VideoSection = () => {
   return (
     <section id="video" className="py-12 sm:py-16 md:py-20 px-4 bg-gradient-to-br from-playful-blue/20 via-playful-green/20 to-playful-orange/20 relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="hidden md:block absolute top-10 right-10 w-20 h-20 rounded-full bg-playful-cyan opacity-30 border-thick border-foreground animate-float" />
-      <div className="hidden md:block absolute bottom-10 left-10 w-24 h-24 bg-playful-purple rotate-45 opacity-30 border-thick border-foreground animate-float" style={{ animationDelay: '2s' }} />
-      
+   
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="relative aspect-video rounded-lg overflow-hidden shadow-block border-thick border-border bg-background" style={{ transform: 'rotate(-1deg)' }}>
           {/* Video Placeholder */}
