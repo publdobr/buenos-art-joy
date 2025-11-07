@@ -38,7 +38,7 @@ const Schedule = () => {
         <h2 className="text-4xl md:text-6xl lg:text-7xl font-black mb-16 text-center font-archivo" style={{
         transform: 'rotate(1deg)'
       }}>
-          <span className="text-gradient text-teal-500">Расписание и цены</span>
+          <span className="text-gradient text-indigo-500">Расписание и цены</span>
         </h2>
 
         {/* Info Cards */}
