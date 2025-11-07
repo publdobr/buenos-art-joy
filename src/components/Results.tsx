@@ -1,50 +1,113 @@
 import { Sparkles, Heart, Palette } from "lucide-react";
+
 const Results = () => {
-  const results = [{
-    icon: Sparkles,
-    text: "Необходимый сенсорный опыт",
-    color: "text-playful-yellow",
-    bg: "bg-playful-yellow/10"
-  }, {
-    icon: Heart,
-    text: "Удовлетворение в потребности шалить",
-    color: "text-playful-pink",
-    bg: "bg-playful-pink/10"
-  }, {
-    icon: Palette,
-    text: "А ещё — выставки с работами участников и ваша личная коллекция шедевров",
-    color: "text-playful-blue",
-    bg: "bg-playful-blue/10"
-  }];
-  return <section id="results" className="py-12 sm:py-16 md:py-20 px-4 bg-background relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="hidden md:block absolute top-20 right-20 w-16 h-16 bg-playful-cyan opacity-20 border-thick border-foreground" style={{
-      transform: 'rotate(12deg)'
-    }} />
-      <div className="hidden md:block absolute bottom-20 left-20 w-20 h-20 rounded-full bg-playful-bright-yellow opacity-20 border-thick border-foreground" />
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 style={{
-        transform: 'rotate(1deg)'
-      }} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-8 sm:mb-12 md:mb-16 text-center font-archivo text-sky-500">
-          Результат занятий
-        </h2>
-        
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          {results.map((result, index) => {
-          const Icon = result.icon;
-          const rotations = ['rotate(-1deg)', 'rotate(1deg)', 'rotate(-0.5deg)'];
-          return <div key={index} className={`p-6 sm:p-8 rounded-lg ${result.bg} hover:scale-105 hover:-rotate-2 transition-all duration-300 shadow-block border-thick border-border`} style={{
-            transform: rotations[index]
-          }}>
-                <Icon className={`w-12 h-12 sm:w-16 sm:h-16 mb-4 sm:mb-6 ${result.color}`} strokeWidth={3} />
-                <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground leading-relaxed font-work-sans">
-                  {result.text}
-                </p>
-              </div>;
-        })}
+  const items = [
+    {
+      icon: Sparkles,
+      title: "Сенсорный опыт",
+      text: "Необходимый сенсорный опыт",
+      color: "var(--color-yellow)",
+      accent: "var(--color-cyan)",
+    },
+    {
+      icon: Heart,
+      title: "Шалость",
+      text: "Удовлетворение потребности шалить",
+      color: "var(--color-pink)",
+      accent: "var(--color-blue)",
+    },
+    {
+      icon: Palette,
+      title: "Коллекция",
+      text: "Выставки с работами участников и ваша личная коллекция шедевров",
+      color: "var(--color-blue)",
+      accent: "var(--color-yellow)",
+    },
+  ];
+
+  return (
+    <section id="results" className="py-24 relative overflow-hidden bg-white">
+      {/* Decorative elements */}
+      <div className="absolute top-10 right-20 w-24 h-24 border-4 border-[hsl(var(--color-blue))] opacity-60 animate-float" />
+      <div className="absolute bottom-20 left-10 w-32 h-32 border-4 border-[hsl(var(--color-pink))] rounded-full opacity-50 animate-wiggle" />
+      <div className="absolute top-40 left-1/4 w-3 h-3 bg-[hsl(var(--color-yellow))] rounded-full" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto space-y-12">
+          <div className="text-center space-y-6">
+            <h2 className="relative inline-block">
+              Результат занятий
+              <div className="absolute -bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-cyan))] opacity-60 rotate-1" />
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {items.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={index}
+                  className="relative p-8 bg-white border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all"
+                >
+                  {/* Decorative corner */}
+                  <div
+                    className="absolute -top-2 -left-2 w-8 h-8 rounded-full"
+                    style={{ backgroundColor: `hsl(${item.color})` }}
+                  />
+
+                  <div className="flex items-center gap-4 mb-4">
+                    <Icon
+                      className="w-8 h-8"
+                      strokeWidth={3}
+                      style={{ color: `hsl(${item.color})` }}
+                    />
+                    <h3 className="text-2xl font-semibold">{item.title}</h3>
+                  </div>
+
+                  <p className="text-base leading-relaxed font-medium">
+                    {item.text}
+                  </p>
+
+                  {/* Random doodle element */}
+                  {index === 0 && (
+                    <div className="absolute -bottom-3 -right-3 w-6 h-6 bg-[hsl(var(--color-red))] rotate-45" />
+                  )}
+                  {index === 1 && (
+                    <div className="absolute -top-3 -right-3 w-6 h-6 border-3 border-[hsl(var(--color-cyan))] rounded-full" />
+                  )}
+                  {index === 2 && (
+                    <svg
+                      className="absolute -bottom-2 -right-2 w-8 h-8"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M2,10 L10,2 L18,10 L10,18 Z"
+                        fill="hsl(var(--color-orange))"
+                      />
+                    </svg>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </section>;
+
+      {/* More decorative elements */}
+      <svg
+        className="absolute top-32 left-10 w-32 h-32 opacity-50"
+        viewBox="0 0 100 100"
+      >
+        <path
+          d="M20,50 Q40,20 60,50 T100,50"
+          stroke="hsl(var(--color-orange))"
+          strokeWidth="4"
+          fill="none"
+          className="animate-float"
+        />
+      </svg>
+    </section>
+  );
 };
+
 export default Results;
