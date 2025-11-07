@@ -8,7 +8,7 @@ const MobileMenu = () => {
     { title: "Главная", href: "#hero" },
     { title: "Философия", href: "#philosophy" },
     { title: "Формат", href: "#schedule" },
-    { title: "Цены", href: "#price" },
+    { title: "Цены", href: "#schedule" },
     { title: "FAQ", href: "#faq" },
     { title: "Контакты", href: "#contact" },
   ];
