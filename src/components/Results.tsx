@@ -2,17 +2,17 @@ import { Sparkles, Heart, Palette } from "lucide-react";
 const Results = () => {
   const results = [{
     icon: Sparkles,
-    text: "Необходимый сенсорный опыт.",
+    text: "Необходимый сенсорный опыт",
     color: "text-playful-yellow",
     bg: "bg-playful-yellow/10"
   }, {
     icon: Heart,
-    text: "Удовлетворение в потребности шалить.",
+    text: "Удовлетворение в потребности шалить",
     color: "text-playful-pink",
     bg: "bg-playful-pink/10"
   }, {
     icon: Palette,
-    text: "А ещё — выставки с работами участников и ваша личная коллекция шедевров.",
+    text: "А ещё — выставки с работами участников и ваша личная коллекция шедевров",
     color: "text-playful-blue",
     bg: "bg-playful-blue/10"
   }];
