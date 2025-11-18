@@ -42,7 +42,6 @@ const VideoSection = () => {
               controls
               playsInline
               className="w-auto h-full max-h-[80vh] rounded-lg object-contain"
-              poster={media[currentIndex].poster}
             >
               <source src={media[currentIndex].src} type="video/mp4" />
               Ваш браузер не поддерживает видео.
