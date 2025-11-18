@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { MapPin, Send } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
+  
   const telegramLink =
     "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29";
 
@@ -20,7 +23,7 @@ const Contact = () => {
         <div className="max-w-3xl mx-auto space-y-12">
           <div className="text-center space-y-6">
             <h2 className="relative inline-block font-black text-5xl sm:text-6xl">
-              Контакты
+              {t('contact.title')}
               <div className="absolute -bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-cyan))] opacity-60 rotate-1" />
             </h2>
           </div>
@@ -33,10 +36,10 @@ const Contact = () => {
                   <MapPin className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="mb-3 text-2xl font-semibold">Где</h3>
+                  <h3 className="mb-3 text-2xl font-semibold">{t('contact.where')}</h3>
                   <p className="text-lg leading-relaxed font-medium">
-                    📍 Буэнос-Айрес, <a href="https://maps.app.goo.gl/JZVaQyJc229dEBNC9" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground transition-colors"> 
-                      угол Federico Lacroze и Alvarez Thomas </a>
+                    {t('contact.location')} <a href="https://maps.app.goo.gl/JZVaQyJc229dEBNC9" target="_blank" rel="noopener noreferrer" className="underline hover:text-muted-foreground transition-colors"> 
+                      {t('contact.address')} </a>
                   </p>
                 </div>
               </div>
@@ -50,8 +53,7 @@ const Contact = () => {
                 <div>
                   
                   <p className="text-lg mb-6 font-medium">
-                    Напишите нам в Telegram, чтобы узнать подробности и
-                    записаться на пробное занятие
+                    {t('contact.telegram')}
                   </p>
                   <Button
                     size="lg"
@@ -59,7 +61,7 @@ const Contact = () => {
                     onClick={() => window.open(telegramLink, "_blank")}
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    Написать
+                    {t('contact.write')}
                   </Button>
                 </div>
               </div>
@@ -74,7 +76,7 @@ const Contact = () => {
           {/* Footer note */}
           <div className="text-center py-8 border-t-4 border-black">
             <p className="text-lg font-medium italic">
-              Давайте творить вместе!
+              {t('contact.footer')}
             </p>
           </div>
         </div>

@@ -1,32 +1,36 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const FAQ = () => {
+  const { t } = useLanguage();
+  
   const faqs = [{
-    question: "Нужно ли уметь рисовать, чтобы прийти?",
-    answer: "Совсем нет! Здесь не учат рисовать «правильно». Здесь — про свободу, удовольствие и процесс."
+    question: t('faq.q1'),
+    answer: t('faq.a1')
   }, {
-    question: "Где проходят занятия?",
-    answer: "Занятия проходят на терассе дома. Это значит, что есть кухня, обеденная зона, два туалета с ваннами, аптечка, детские игрушки, возможность побыть отдельно в тишине, если произошел сенсорный перегруз."
+    question: t('faq.q2'),
+    answer: t('faq.a2')
   }, {
-  question: "Сколько человек в группе?",
-    answer: "Занятия проходят в небольших группах до 8 человек — так каждому достаётся внимание и пространство для эксперимента."
+    question: t('faq.q3'),
+    answer: t('faq.a3')
   }, {
-    question: "Что нужно брать с собой?",
-    answer: "Только сменную одежду, которую не жалко испачкать. Все материалы есть на месте."
+    question: t('faq.q4'),
+    answer: t('faq.a4')
   }, {
-    question: "Можно ли взрослым приходить без детей?",
-    answer: "Обязательно! Взрослые тоже имеют право на безобразие."
+    question: t('faq.q5'),
+    answer: t('faq.a5')
   }, {
-    question: "Что если ребёнку станет слишком шумно или он устанет?",
-    answer: "В доме есть тихие зоны, где можно побыть в спокойствии, выпить воды или просто полежать."
+    question: t('faq.q6'),
+    answer: t('faq.a6')
   }, {
-    question: "Как часто проходят занятия?",
-    answer: "Дважды в неделю, но можно прийти и на разовое занятие."
+    question: t('faq.q7'),
+    answer: t('faq.a7')
   }];
   return <section id="faq" className="py-12 sm:py-16 md:py-20 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
 
          <h2 className="relative inline-block text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
-            Вопрос / Ответ
+            {t('faq.title')}
             <div className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-pink))] opacity-60 -rotate-1" />
           </h2>
 

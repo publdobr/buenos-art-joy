@@ -41,7 +41,8 @@ export default {
   'schedule.withAdultSub': '(доплата только за материалы)',
   'schedule.withAdultPrice': '30 $',
   'schedule.withAdultPackage': '4 занятия за 100 $',
-  'schedule.register': 'Записаться',
+  'schedule.info': 'Расписание занятий скоро опубликуем, но уже можно смело записываться!',
+  'schedule.register': 'Записаться на пробное занятие',
   
   // FAQ
   'faq.title': 'Вопрос / Ответ',

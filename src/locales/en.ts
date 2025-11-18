@@ -41,7 +41,8 @@ export default {
   'schedule.withAdultSub': '(extra charge only for materials)',
   'schedule.withAdultPrice': '30 $',
   'schedule.withAdultPackage': '4 classes for 100 $',
-  'schedule.register': 'Register',
+  'schedule.info': 'Class schedule coming soon, but you can already sign up with confidence!',
+  'schedule.register': 'Sign up for a trial class',
   
   // FAQ
   'faq.title': 'Questions / Answers',

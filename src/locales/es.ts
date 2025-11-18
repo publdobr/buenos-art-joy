@@ -41,7 +41,8 @@ export default {
   'schedule.withAdultSub': '(pago adicional solo por materiales)',
   'schedule.withAdultPrice': '30 $',
   'schedule.withAdultPackage': '4 clases por 100 $',
-  'schedule.register': 'Inscribirse',
+  'schedule.info': '¡Pronto publicaremos el horario de clases, pero ya puedes inscribirte con confianza!',
+  'schedule.register': 'Inscribirse a clase de prueba',
   
   // FAQ
   'faq.title': 'Preguntas / Respuestas',

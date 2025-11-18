@@ -1,16 +1,18 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const MobileMenu = () => {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { title: "Главная", href: "#hero" },
-    { title: "Философия", href: "#philosophy" },
-    { title: "Формат", href: "#schedule" },
-    { title: "Цены", href: "#schedule" },
-    { title: "FAQ", href: "#faq" },
-    { title: "Контакты", href: "#contact" },
+    { title: t('menu.home'), href: "#hero" },
+    { title: t('menu.philosophy'), href: "#philosophy" },
+    { title: t('menu.format'), href: "#schedule" },
+    { title: t('menu.pricing'), href: "#schedule" },
+    { title: t('menu.faq'), href: "#faq" },
+    { title: t('menu.contact'), href: "#contact" },
   ];
 
   const handleClick = (href: string) => {

@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Shirt, DollarSign, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Schedule = () => {
+  const { t } = useLanguage();
+  
   const handleTelegramClick = () => {
     window.open(
       "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29",
@@ -13,33 +16,33 @@ const Schedule = () => {
   const info = [
     {
       icon: Clock,
-      text: "Формат: занятия по 2 часа",
+      text: `${t('schedule.format')}: ${t('schedule.formatText')}`,
       color: "text-playful-pink",
     },
     {
       icon: Users,
-      text: "Возраст: от 1,5 лет до бесконечности",
+      text: `${t('schedule.age')}: ${t('schedule.ageText')}`,
       color: "text-playful-blue",
     },
     {
       icon: Shirt,
-      text: "Нужно: сменная одежда, которую можно пачкать",
+      text: `${t('schedule.clothing')}: ${t('schedule.clothingText')}`,
       color: "text-playful-green",
     },
   ];
 
   const pricing = [
     {
-      title: "Один человек",
-      subtitle: "(ребёнок или взрослый)",
-      price: "25 $",
-      package: "4 занятия за 80 $",
+      title: t('schedule.onePerson'),
+      subtitle: t('schedule.onePersonSub'),
+      price: t('schedule.onePersonPrice'),
+      package: t('schedule.onePersonPackage'),
     },
     {
-      title: "Ребёнок + взрослый",
-      subtitle: "(доплата только за материалы)",
-      price: "30 $",
-      package: "4 занятия за 100 $",
+      title: t('schedule.withAdult'),
+      subtitle: t('schedule.withAdultSub'),
+      price: t('schedule.withAdultPrice'),
+      package: t('schedule.withAdultPackage'),
     },
   ];
 
@@ -57,7 +60,7 @@ const Schedule = () => {
         {/* Заголовок */}
         <div className="text-center space-y-6">
           <h2 className="relative inline-block text-4xl sm:text-5xl md:text-6xl font-black font-archivo">
-            Расписание и цены
+            {t('schedule.title')}
             <div className="absolute -bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-cyan))] opacity-60 rotate-1" />
           </h2>
         </div>
@@ -98,7 +101,7 @@ const Schedule = () => {
         <div className="space-y-12">
           <div className="text-center space-y-6">
             <h3 className="relative inline-block text-3xl sm:text-4xl md:text-5xl font-black font-archivo">
-              Стоимость
+              {t('schedule.pricing')}
               <div className="absolute -bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-yellow))] opacity-60 rotate-1" />
             </h3>
           </div>
@@ -146,7 +149,7 @@ const Schedule = () => {
               backgroundColor: "hsl(50, 100%, 90%)", // 🌼 светло-жёлтый фон
             }}
           >
-            Расписание занятий скоро опубликуем, но уже можно смело записываться!
+            {t('schedule.info')}
           </p>
         </div>
 
@@ -158,7 +161,7 @@ const Schedule = () => {
             onClick={handleTelegramClick}
             className="group relative text-sm sm:text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-playful-blue hover:bg-playful-bright-blue border-thick border-border shadow-block hover:scale-105 transition-all duration-500 font-bold text-white"
           >
-            Записаться на пробное занятие
+            {t('schedule.register')}
             <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
             {/* Декоративная звёздочка */}
             <div className="hidden sm:block absolute -top-3 -right-3 w-6 h-6 text-[hsl(var(--color-red))] text-3xl">
