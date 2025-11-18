@@ -14,6 +14,9 @@ export default {
   'philosophy.music': 'рисуем музыку',
   'philosophy.paint': 'валяемся в краске',
   'philosophy.pleasure': 'в удовольствие.',
+  'philosophy.sometimes': 'Иногда',
+  'philosophy.sometimesss': 'Иногда узнаём о',
+  'philosophy.all': 'Всё — ',
   
   // Results
   'results.title': 'Результат занятий',
