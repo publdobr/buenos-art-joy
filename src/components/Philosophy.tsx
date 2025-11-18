@@ -27,28 +27,26 @@ const Philosophy = () => {
             <div className="absolute -top-2 -right-2 md:-top-3 md:-right-3 w-6 h-6 md:w-8 md:h-8 border-4 border-[hsl(var(--color-pink))] rotate-45" />
 
             <div className="space-y-6 md:space-y-8 text-center">
-              <p
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed max-w-3xl mx-auto font-work-sans"
-              >
-                {t('philosophy.text')}{" "}
-                <span className="font-bold text-playful-pink">
-                  {t('philosophy.dirty')}
-                </span>
-                . {t('philosophy.sometimes')}{" "}
-                <span className="font-bold text-playful-blue">{t('philosophy.draw')}</span>.
-                 {t('philosophy.sometimesss')}{" "}
-                <span className="font-bold text-playful-green">
-                  {t('philosophy.learn')}
-                </span>
-                . {t('philosophy.sometimes')}{" "}
-                <span className="font-bold text-playful-orange">{t('philosophy.music')}</span>.
-                 {t('philosophy.sometimes')}{" "}
-                <span className="font-bold text-playful-yellow">{t('philosophy.paint')}</span>.
-                 {t('philosophy.all')}{" "}
-                <span className="font-black text-playful-pink text-3xl font-archivo">
-                  {t('philosophy.pleasure')}
-                </span>
-              </p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed max-w-3xl mx-auto font-work-sans">
+                  {t('philosophy.text')}{" "}
+                  <span className="font-bold text-playful-pink">
+                    {t('philosophy.dirty')}
+                  </span>
+                  .{" "} {t('philosophy.sometimes')}{" "}
+                  <span className="font-bold text-playful-blue">{t('philosophy.draw')}</span>.{" "}
+                  {t('philosophy.sometimesss')}{" "}
+                  <span className="font-bold text-playful-green">
+                    {t('philosophy.learn')}
+                  </span>
+                  .{" "} {t('philosophy.sometimes')}{" "}
+                  <span className="font-bold text-playful-orange">{t('philosophy.music')}</span>.{" "}
+                  {t('philosophy.sometimes')}{" "}
+                  <span className="font-bold text-playful-yellow">{t('philosophy.paint')}</span>.{" "}
+                  {t('philosophy.all')}{" "}
+                  <span className="font-black text-playful-pink text-3xl font-archivo">
+                    {t('philosophy.pleasure')}
+                  </span>
+                </p>
 
               {/* Hand-drawn star */}
               <div className="absolute top-4 left-4 text-4xl text-[hsl(var(--color-yellow))]">
