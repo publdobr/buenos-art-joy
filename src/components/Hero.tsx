@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-oli.jpeg";
+
 const Hero = () => {
+  const { t } = useLanguage();
   const handleTelegramClick = () => {
     window.open('https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29', '_blank');
   };
@@ -34,13 +37,13 @@ const Hero = () => {
           <div className="space-y-4 animate-in fade-in slide-in-from-bottom duration-700">
             
             <div className="relative inline-block mt-8">
-              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl px-4">ТВОРЧЕСКОЕ ОБЪЕДИНЕНИЕ</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl px-4">{t('hero.subtitle')}</h2>
               {/* Decorative scribble */}
               <div className="hidden md:block absolute -top-8 -right-12 w-20 h-20 border-4 border-[hsl(var(--color-yellow))] rounded-full opacity-70 animate-spin-slow" />
             </div>
 
             <h1 className="relative inline-block px-4">
-              <span className="relative z-10 font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl animate-wiggle">БЕЗОБРАЗИЕ</span>
+              <span className="relative z-10 font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl animate-wiggle">{t('hero.title')}</span>
               {/* Hand-drawn underline */}
               <div className="absolute -bottom-2 md:-bottom-4 left-0 right-0 h-2 md:h-3 bg-[hsl(var(--color-pink))] opacity-50 -rotate-1" />
             </h1>
@@ -49,7 +52,7 @@ const Hero = () => {
           {/* Description with hand-drawn style */}
           <div className="relative max-w-2xl mx-auto px-4">
             <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom duration-700 delay-150">
-              Безобразно весело, безгранично свободно
+              {t('hero.description')}
             </p>
             {/* Decorative dots */}
             <div className="hidden sm:block absolute -top-4 -left-4 w-6 h-6 bg-[hsl(var(--color-red))] rounded-full opacity-80" />
@@ -59,7 +62,7 @@ const Hero = () => {
           {/* CTA Button */}
           <div className="animate-in fade-in slide-in-from-bottom duration-700 delay-300 px-4">
             <Button variant="playful" size="lg" onClick={handleTelegramClick} className="group relative text-sm sm:text-base md:text-lg px-6 md:px-8 py-4 md:py-6">
-              Записаться на пробное занятие
+              {t('hero.cta')}
               <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
               {/* Decorative star */}
               <div className="hidden sm:block absolute -top-3 -right-3 w-6 h-6 text-[hsl(var(--color-red))] text-3xl">✦</div>
