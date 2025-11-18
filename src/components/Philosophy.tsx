@@ -34,17 +34,17 @@ const Philosophy = () => {
                 <span className="font-bold text-playful-pink">
                   {t('philosophy.dirty')}
                 </span>
-                . Иногда{" "}
+                . {t('philosophy.sometimes')}{" "}
                 <span className="font-bold text-playful-blue">{t('philosophy.draw')}</span>.
-                Иногда узнаём о{" "}
+                {t('philosophy.sometimesss')}{" "}
                 <span className="font-bold text-playful-green">
                   {t('philosophy.learn')}
                 </span>
-                . Иногда{" "}
+                . {t('philosophy.sometimes')}{" "}
                 <span className="font-bold text-playful-orange">{t('philosophy.music')}</span>.
-                Иногда{" "}
+                {t('philosophy.sometimes')}{" "}
                 <span className="font-bold text-playful-yellow">{t('philosophy.paint')}</span>.
-                Всё —{" "}
+                {t('philosophy.all')}{" "}
                 <span className="font-black text-playful-pink text-3xl font-archivo">
                   {t('philosophy.pleasure')}
                 </span>
