@@ -16,7 +16,7 @@ export default {
   'philosophy.pleasure': 'for pleasure.',
   'philosophy.sometimes': 'Sometimes',
   'philosophy.sometimesss': 'Sometimes we find out',
-  'philosophy.all': 'Everything',
+  'philosophy.all': 'Everything — ',
   
   // Results
   'results.title': 'Class Results',
