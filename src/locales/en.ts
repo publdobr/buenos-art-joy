@@ -14,6 +14,9 @@ export default {
   'philosophy.music': 'draw music',
   'philosophy.paint': 'roll around in paint',
   'philosophy.pleasure': 'for pleasure.',
+  'philosophy.sometimes': 'Sometimes',
+  'philosophy.sometimesss': 'Sometimes we find out',
+  'philosophy.all': 'Everything',
   
   // Results
   'results.title': 'Class Results',
