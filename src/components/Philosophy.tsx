@@ -1,4 +1,8 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Philosophy = () => {
+  const { t } = useLanguage();
+  
   return (
     <section
       id="philosophy"
@@ -12,7 +16,7 @@ const Philosophy = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="relative inline-block text-3xl sm:text-4xl md:text-6xl lg:text-7xl">
-            Философия
+            {t('philosophy.title')}
             <div className="absolute -bottom-2 md:-bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-pink))] opacity-60 -rotate-1" />
           </h2>
 
@@ -26,23 +30,23 @@ const Philosophy = () => {
               <p
                 className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground leading-relaxed max-w-3xl mx-auto font-work-sans"
               >
-                Творим без страха испачкаться самому и испачкать всё вокруг.{" "}
+                {t('philosophy.text')}{" "}
                 <span className="font-bold text-playful-pink">
-                  Грязный ребёнок — счастливый ребёнок
+                  {t('philosophy.dirty')}
                 </span>
                 . Иногда{" "}
-                <span className="font-bold text-playful-blue">ПРОСТО рисуем</span>.
+                <span className="font-bold text-playful-blue">{t('philosophy.draw')}</span>.
                 Иногда узнаём о{" "}
                 <span className="font-bold text-playful-green">
-                  новых стилях и художниках
+                  {t('philosophy.learn')}
                 </span>
                 . Иногда{" "}
-                <span className="font-bold text-playful-orange">рисуем музыку</span>.
+                <span className="font-bold text-playful-orange">{t('philosophy.music')}</span>.
                 Иногда{" "}
-                <span className="font-bold text-playful-yellow">валяемся в краске</span>.
+                <span className="font-bold text-playful-yellow">{t('philosophy.paint')}</span>.
                 Всё —{" "}
                 <span className="font-black text-playful-pink text-3xl font-archivo">
-                  в удовольствие.
+                  {t('philosophy.pleasure')}
                 </span>
               </p>
 

@@ -1,25 +1,28 @@
 import { Sparkles, Heart, Palette } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Results = () => {
+  const { t } = useLanguage();
+  
   const items = [
     {
       icon: Sparkles,
-      title: "Опыт",
-      text: "Необходимый сенсорный опыт",
+      title: t('results.experience.title'),
+      text: t('results.experience.text'),
       color: "var(--color-yellow)",
       accent: "var(--color-cyan)",
     },
     {
       icon: Heart,
-      title: "Шалость",
-      text: "Удовлетворение потребности шалить",
+      title: t('results.mischief.title'),
+      text: t('results.mischief.text'),
       color: "var(--color-pink)",
       accent: "var(--color-blue)",
     },
     {
       icon: Palette,
-      title: "Шедевры",
-      text: "Выставки с работами участников и ваша личная коллекция шедевров",
+      title: t('results.masterpieces.title'),
+      text: t('results.masterpieces.text'),
       color: "var(--color-blue)",
       accent: "var(--color-yellow)",
     },
@@ -36,7 +39,7 @@ const Results = () => {
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-6">
             <h2 className="relative inline-block">
-              Результат занятий
+              {t('results.title')}
               <div className="absolute -bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-cyan))] opacity-60 rotate-1" />
             </h2>
           </div>
