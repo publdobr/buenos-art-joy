@@ -14,6 +14,9 @@ export default {
   'philosophy.music': 'dibujamos música',
   'philosophy.paint': 'nos revolcamos en pintura',
   'philosophy.pleasure': 'por placer.',
+  'philosophy.sometimes': 'A veces',
+  'philosophy.sometimesss': 'A veces nos enteramos de',
+  'philosophy.all': 'Todo',
   
   // Results
   'results.title': 'Resultado de las clases',
