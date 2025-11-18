@@ -21,10 +21,15 @@ const Hero = () => {
           {/* Logo */} 
         </div>
 
-        <div className="flex items-center gap-6 md:gap-8">
-          <LanguageSwitcher />
+        {/* Правая часть: Переключатель языков + Мобильное меню */}
+        <div className="flex items-center">
+          {/* Добавляем mr-20 (отступ справа 80px) или mr-24, чтобы не наезжало на кнопку */}
+          <div className="mr-20 md:mr-24"> 
+            <LanguageSwitcher />
+          </div>
           <MobileMenu />
         </div>
+        
       </nav>
 
       {/* Background image with overlay */}
