@@ -36,15 +36,15 @@ const Philosophy = () => {
                 </span>
                 . {t('philosophy.sometimes')}{" "}
                 <span className="font-bold text-playful-blue">{t('philosophy.draw')}</span>.
-                {t('philosophy.sometimesss')}{" "}
+                 {t('philosophy.sometimesss')}{" "}
                 <span className="font-bold text-playful-green">
                   {t('philosophy.learn')}
                 </span>
                 . {t('philosophy.sometimes')}{" "}
                 <span className="font-bold text-playful-orange">{t('philosophy.music')}</span>.
-                {t('philosophy.sometimes')}{" "}
+                 {t('philosophy.sometimes')}{" "}
                 <span className="font-bold text-playful-yellow">{t('philosophy.paint')}</span>.
-                {t('philosophy.all')}{" "}
+                 {t('philosophy.all')}{" "}
                 <span className="font-black text-playful-pink text-3xl font-archivo">
                   {t('philosophy.pleasure')}
                 </span>
