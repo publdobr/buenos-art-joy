@@ -1,6 +1,9 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+// 1. Импортируем русский язык статически, чтобы он был доступен сразу
+import ruTranslations from '../locales/ru';
 
-type Language = 'es-AR' | 'en' | 'ru';
+// 2. Исправили 'es-AR' на 'es', чтобы соответствовало названию файла src/locales/es.ts
+type Language = 'es' | 'en' | 'ru';
 
 interface LanguageContextType {
   language: Language;
@@ -23,23 +26,34 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  // 3. Устанавливаем 'ru' как дефолтное значение
   const [language, setLanguageState] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
-    return (saved as Language) || 'es-AR';
+    // Проверяем валидность сохраненного языка, иначе возвращаем 'ru'
+    if (saved === 'es' || saved === 'en' || saved === 'ru') {
+      return saved;
+    }
+    return 'ru';
   });
 
-  const [translations, setTranslations] = useState<Record<string, string>>({});
+  // 4. Инициализируем состояние сразу русскими переводами
+  // Это решает проблему, когда при загрузке все текстовые поля были пустыми
+  const [translations, setTranslations] = useState<Record<string, string>>(ruTranslations);
 
   useEffect(() => {
     const loadTranslations = async () => {
+      // Если выбран русский, и он уже загружен (начальное состояние), можно пропустить
+      // Но для простоты оставим перезагрузку, она быстрая
       try {
         const module = await import(`../locales/${language}.ts`);
         setTranslations(module.default);
       } catch (error) {
-        console.error('Failed to load translations:', error);
-        // Fallback or error handling logic
+        console.error(`Failed to load translations for ${language}:`, error);
+        // Если не удалось загрузить выбранный язык, откатываемся на русский
+        setTranslations(ruTranslations);
       }
     };
+
     loadTranslations();
   }, [language]);
 
