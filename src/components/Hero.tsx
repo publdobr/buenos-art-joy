@@ -2,17 +2,39 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-oli.jpeg";
+import { LanguageSwitcher } from "./LanguageSwitcher"; // Импортируем переключатель
+import { MobileMenu } from "./MobileMenu"; // Импортируем мобильное меню
 
 const Hero = () => {
   const { t } = useLanguage();
+
   const handleTelegramClick = () => {
     window.open('https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29', '_blank');
   };
-  return <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+
+  return (
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-white">
+      
+      {/* --- ВЕРХНЯЯ ПАНЕЛЬ (НАВИГАЦИЯ) --- */}
+      <nav className="absolute top-0 left-0 right-0 z-50 w-full p-4 md:p-6 flex justify-between items-center">
+        {/* Логотип или название (пустой div, если логотипа пока нет, чтобы выровнять правый блок) */}
+        <div className="font-bold text-xl tracking-tighter text-gray-800">
+          {/* M&P */} 
+        </div>
+
+        {/* Правая часть: Переключатель языков + Мобильное меню */}
+        <div className="flex items-center gap-3 md:gap-4">
+          <LanguageSwitcher />
+          <MobileMenu />
+        </div>
+      </nav>
+      {/* ---------------------------------- */}
+
+
       {/* Background image with overlay */}
       <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{
-      backgroundImage: `url(${heroImage})`
-    }} />
+        backgroundImage: `url(${heroImage})`
+      }} />
       
       {/* Decorative doodles - scattered around like in the poster */}
       <div className="hidden md:block absolute top-20 left-10 w-32 h-32 border-4 border-[hsl(var(--color-pink))] rounded-full opacity-70 animate-float" />
@@ -31,19 +53,19 @@ const Hero = () => {
         <path d="M20,80 Q40,20 60,60 T90,30" stroke="hsl(var(--color-orange))" strokeWidth="4" fill="none" className="animate-wiggle" />
       </svg>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-20 relative z-10 mt-10"> {/* Добавил mt-10 чтобы контент не наезжал на меню на маленьких экранах */}
         <div className="max-w-5xl mx-auto text-center space-y-8 md:space-y-12">
           {/* Main title - large grotesque typography */}
           <div className="space-y-4 animate-in fade-in slide-in-from-bottom duration-700">
             
             <div className="relative inline-block mt-8">
-              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl px-4">{t('hero.subtitle')}</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl px-4 font-bold text-gray-800">{t('hero.subtitle')}</h2>
               {/* Decorative scribble */}
               <div className="hidden md:block absolute -top-8 -right-12 w-20 h-20 border-4 border-[hsl(var(--color-yellow))] rounded-full opacity-70 animate-spin-slow" />
             </div>
 
             <h1 className="relative inline-block px-4">
-              <span className="relative z-10 font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl animate-wiggle">{t('hero.title')}</span>
+              <span className="relative z-10 font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-8xl animate-wiggle text-black">{t('hero.title')}</span>
               {/* Hand-drawn underline */}
               <div className="absolute -bottom-2 md:-bottom-4 left-0 right-0 h-2 md:h-3 bg-[hsl(var(--color-pink))] opacity-50 -rotate-1" />
             </h1>
@@ -51,7 +73,7 @@ const Hero = () => {
           
           {/* Description with hand-drawn style */}
           <div className="relative max-w-2xl mx-auto px-4">
-            <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom duration-700 delay-150">
+            <p className="text-lg sm:text-xl md:text-2xl leading-relaxed font-medium text-gray-700 animate-in fade-in slide-in-from-bottom duration-700 delay-150">
               {t('hero.description')}
             </p>
             {/* Decorative dots */}
@@ -78,6 +100,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
