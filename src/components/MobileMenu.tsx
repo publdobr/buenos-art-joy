@@ -10,7 +10,7 @@ const MobileMenu = () => {
     { title: t('menu.home'), href: "#hero" },
     { title: t('menu.philosophy'), href: "#philosophy" },
     { title: t('menu.format'), href: "#schedule" },
-    { title: t('menu.pricing'), href: "#schedule" },
+    { title: t('menu.about'), href: "#about" },
     { title: t('menu.faq'), href: "#faq" },
     { title: t('menu.contact'), href: "#contact" },
   ];
