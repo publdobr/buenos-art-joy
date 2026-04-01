@@ -17,6 +17,7 @@ const Index = () => {
       <Philosophy />
       <Results />
       <VideoSection />
+      <AboutUs />
       <Schedule />
       <Gallery />
       <FAQ />
