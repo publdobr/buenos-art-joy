@@ -20,7 +20,7 @@ export default {
   
   // Manifesto
   'manifesto.title': 'Manifiesto',
-  'manifesto.intro': 'No somos una escuela de dibujo. Somos un laboratorio para reconstruir el mundo por dentro y por fuera. Mezclamos el caos creativo con la ciencia (Vygotsky está con nosotros🤟🏼) para alcanzar nuestra propia libertad.',
+  'manifesto.intro': 'No somos una escuela de dibujo. Somos un laboratorio para reconstruir el mundo por dentro y por fuera. Mezclamos el caos creativo con la ciencia para alcanzar nuestra propia libertad.',
   'manifesto.laws': 'Nuestras 5 leyes:',
   'manifesto.method.title': '1. DES-ORDEN COMO MÉTODO',
   'manifesto.method.text': 'Rechazamos la "imagen bonita" como fin en sí mismo. "Desorden" es un estado "sin forma", libertad de la forma congelada. Legalizamos las líneas torcidas, las manchas y el caos. No hay errores porque no hay reglas. Simplemente hacemos.',
