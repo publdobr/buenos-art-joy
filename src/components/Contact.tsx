@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Send } from "lucide-react";
+import { MapPin, Send, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
