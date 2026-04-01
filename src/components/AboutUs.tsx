@@ -1,0 +1,39 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+import polinaImg from "@/assets/polina.jpg";
+import nastyaImg from "@/assets/nastya.jpg";
+
+const team = [
+  { image: polinaImg, nameKey: "about.polina", roleKey: "about.polinaRole" },
+  { image: nastyaImg, nameKey: "about.nastya", roleKey: "about.nastyaRole" },
+];
+
+const AboutUs = () => {
+  const { t } = useLanguage();
+
+  return (
+    <section className="py-16 px-4 bg-background">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-mono uppercase tracking-wider">
+          {t("about.title")}
+        </h2>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
+          {team.map((member) => (
+            <div key={member.nameKey} className="flex flex-col items-center text-center max-w-[280px]">
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-foreground shadow-[4px_4px_0px_0px_hsl(var(--foreground))] mb-4">
+                <img
+                  src={member.image}
+                  alt={t(member.nameKey)}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-bold mb-1">{t(member.nameKey)}</h3>
+              <p className="text-muted-foreground text-sm">{t(member.roleKey)}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutUs;
