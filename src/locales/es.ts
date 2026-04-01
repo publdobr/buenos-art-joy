@@ -43,7 +43,7 @@ export default {
   'results.masterpieces.text': 'Exposiciones con trabajos de los participantes y tu colección personal de obras maestras',
   
   // Schedule
-  'schedule.title': 'Horario y precios',
+  'schedule.title': 'Formato',
   'schedule.format': 'Formato',
   'schedule.formatText': 'clases de 2 horas',
   'schedule.age': 'Edad',

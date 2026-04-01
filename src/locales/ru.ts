@@ -43,7 +43,7 @@ export default {
   'results.masterpieces.text': 'Выставки с работами участников и ваша личная коллекция шедевров',
   
   // Schedule
-  'schedule.title': 'Расписание и цены',
+  'schedule.title': 'Формат',
   'schedule.format': 'Формат',
   'schedule.formatText': 'занятия по 2 часа',
   'schedule.age': 'Возраст',
