@@ -20,7 +20,7 @@ export default {
   
   // Manifesto
   'manifesto.title': 'Manifesto',
-  'manifesto.intro': 'We are not a drawing school. We are a laboratory for reassembling the world inside and around us. We mix creative chaos with science (Vygotsky is with us🤟🏼) to reach our own freedom.',
+  'manifesto.intro': 'We are not a drawing school. We are a laboratory for reassembling the world inside and around us. We mix creative chaos with science to reach our own freedom.',
   'manifesto.laws': 'Our 5 laws:',
   'manifesto.method.title': '1. DIS-ORDER AS A METHOD',
   'manifesto.method.text': 'We reject the "pretty picture" as an end in itself. "Disorder" is a state "without form," freedom from frozen shape. We legalize crooked lines, blots, and chaos. There are no mistakes because there are no rules. We simply do.',

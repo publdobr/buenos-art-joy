@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MapPin, Send } from "lucide-react";
+import { MapPin, Send, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
@@ -45,6 +45,27 @@ const Contact = () => {
               </div>
               {/* Decorative circle */}
               <div className="absolute -top-3 -right-3 w-8 h-8 bg-[hsl(var(--color-yellow))] rounded-full" />
+            </div>
+
+            {/* Instagram block */}
+            <div className="relative p-8 bg-white border-4 border-black shadow-[6px_6px_0_hsl(0_0%_0%)]">
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-[hsl(var(--color-pink))] border-4 border-black">
+                  <Instagram className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="mb-3 text-2xl font-semibold">Instagram</h3>
+                  <a
+                    href="https://www.instagram.com/bezobrazie_art/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-medium underline hover:text-muted-foreground transition-colors"
+                  >
+                    @bezobrazie_art
+                  </a>
+                </div>
+              </div>
+              <div className="absolute -top-3 -right-3 w-8 h-8 bg-[hsl(var(--color-cyan))] rotate-45" />
             </div>
 
             {/* Telegram block */}
