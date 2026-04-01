@@ -97,61 +97,16 @@ const Schedule = () => {
           })}
         </div>
 
-        {/* Стоимость */}
-        <div className="space-y-12">
-          <div className="text-center space-y-6">
-            <h3 className="relative inline-block text-3xl sm:text-4xl md:text-5xl font-black font-archivo">
-              {t('schedule.pricing')}
-              <div className="absolute -bottom-3 left-0 right-0 h-2 bg-[hsl(var(--color-yellow))] opacity-60 rotate-1" />
-            </h3>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-8">
-            {pricing.map((item, index) => {
-              const rotations = ["rotate(-1deg)", "rotate(1deg)"];
-              return (
-                <div
-                  key={index}
-                  className="p-8 rounded-lg border-thick border-border hover:scale-105 transition-all duration-500 shadow-block"
-                  style={{
-                    transform: rotations[index],
-                    backgroundColor: "hsl(340, 100%, 92%)", // 🌸 светло-розовый фон 
-                  }}
-                >
-                  <h4 className="text-2xl font-black mb-2 font-archivo text-blue-800">
-                    {item.title}
-                  </h4>
-                  {item.subtitle && (
-                    <p className="text-sm text-foreground/70 mb-3 font-work-sans">
-                      {item.subtitle}
-                    </p>
-                  )}
-                  <p className="text-4xl font-black text-white mb-2 font-archivo"
-                      style={{
-                        WebkitTextStroke: '1px black',
-                        WebkitTextFillColor: 'white',
-                      }}>
-                    {item.price}
-                  </p>
-                  <p className="text-lg font-semibold text-foreground font-work-sans">
-                    {item.package}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Розовый блок */}
-          <p
-            className="text-lg text-center text-foreground font-medium p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full"
-            style={{
-              transform: "rotate(-0.5deg)",
-              backgroundColor: "hsl(50, 100%, 90%)", // 🌼 светло-жёлтый фон
-            }}
-          >
-            {t('schedule.info')}
-          </p>
-        </div>
+        {/* Info блок */}
+        <p
+          className="text-lg text-center text-foreground font-medium p-6 rounded-lg border-thick border-border shadow-doodle font-work-sans inline-block w-full"
+          style={{
+            transform: "rotate(-0.5deg)",
+            backgroundColor: "hsl(50, 100%, 90%)",
+          }}
+        >
+          {t('schedule.info')}
+        </p>
 
         {/* CTA Button — новый стиль */}
         <div className="animate-in fade-in slide-in-from-bottom duration-700 delay-300 px-4 text-center">

@@ -68,6 +68,37 @@ const Philosophy = () => {
               </div>
             </div>
           </div>
+
+          {/* Манифест */}
+          <div className="mt-12 space-y-6">
+            <h3 className="relative inline-block text-2xl sm:text-3xl md:text-4xl font-black font-archivo">
+              {t('manifesto.title')}
+              <div className="absolute -bottom-2 left-0 right-0 h-2 bg-[hsl(var(--color-cyan))] opacity-60 rotate-1" />
+            </h3>
+            <p className="text-base sm:text-lg text-foreground/80 font-work-sans">
+              {t('manifesto.intro')}
+            </p>
+            <p className="text-lg font-bold font-archivo text-playful-pink">
+              {t('manifesto.laws')}
+            </p>
+            <Accordion type="multiple" className="space-y-3">
+              {manifestoItems.map((item, index) => (
+                <AccordionItem
+                  key={item.key}
+                  value={item.key}
+                  className="border-thick border-border bg-white shadow-[4px_4px_0_hsl(0_0%_0%)] rounded-lg overflow-hidden px-4"
+                  style={{ transform: index % 2 === 0 ? "rotate(-0.5deg)" : "rotate(0.5deg)" }}
+                >
+                  <AccordionTrigger className="text-left text-base sm:text-lg font-bold font-archivo hover:no-underline py-4">
+                    {t(`manifesto.${item.key}.title`)}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm sm:text-base font-work-sans text-foreground/80 leading-relaxed pb-4">
+                    {t(`manifesto.${item.key}.text`)}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
     </section>
