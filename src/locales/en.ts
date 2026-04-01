@@ -43,7 +43,7 @@ export default {
   'results.masterpieces.text': 'Exhibitions with participants\' works and your personal collection of masterpieces',
   
   // Schedule
-  'schedule.title': 'Schedule and Prices',
+  'schedule.title': 'Format',
   'schedule.format': 'Format',
   'schedule.formatText': '2-hour classes',
   'schedule.age': 'Age',
