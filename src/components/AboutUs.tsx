@@ -11,9 +11,9 @@ const AboutUs = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="py-16 px-4 bg-background">
+    <section id="about" className="py-16 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 font-mono uppercase tracking-wider">
+        <h2 className="text-5xl md:text-7xl font-black text-center mb-12 uppercase tracking-tighter rotate-[-1deg]">
           {t("about.title")}
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-12">

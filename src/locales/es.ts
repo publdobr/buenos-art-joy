@@ -103,6 +103,9 @@ export default {
   'about.title': 'Quiénes somos',
   'about.polina': 'Polina',
   'about.polinaRole': 'Psicóloga infantil, bióloga, mamá de Vasilisa y Luli',
-  'about.nastya': 'Nastya',
+  'about.nastya': 'Anastasiia',
   'about.nastyaRole': 'Artista, mamá de Luka y Agnia',
+
+  // Menu
+  'menu.about': 'Quiénes somos',
 };
