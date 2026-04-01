@@ -1,7 +1,21 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Philosophy = () => {
   const { t } = useLanguage();
+
+  const manifestoItems = [
+    { key: "method" },
+    { key: "pickle" },
+    { key: "experience" },
+    { key: "play" },
+    { key: "zone" },
+  ];
   
   return (
     <section
