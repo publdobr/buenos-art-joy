@@ -18,6 +18,21 @@ export default {
   'philosophy.sometimesss': 'Sometimes we find out',
   'philosophy.all': 'Everything — ',
   
+  // Manifesto
+  'manifesto.title': 'Manifesto',
+  'manifesto.intro': 'We are not a drawing school. We are a laboratory for reassembling the world inside and around us. We mix creative chaos with science (Vygotsky is with us🤟🏼) to reach our own freedom.',
+  'manifesto.laws': 'Our 5 laws:',
+  'manifesto.method.title': '1. DIS-ORDER AS A METHOD',
+  'manifesto.method.text': 'We reject the "pretty picture" as an end in itself. "Disorder" is a state "without form," freedom from frozen shape. We legalize crooked lines, blots, and chaos. There are no mistakes because there are no rules. We simply do.',
+  'manifesto.pickle.title': '2. THE "PICKLED CUCUMBER" EFFECT',
+  'manifesto.pickle.text': 'The environment decides everything. Vygotsky proved it: development is social. A fresh cucumber dropped into brine cannot help but become salty. Our lab is that very brine. Alone, you might dry up. In the right environment, you inevitably soak up creativity. We create the context that turns a person into a creator. Together we learn to live in co-creation with the world.',
+  'manifesto.experience.title': '3. CREATIVITY IS NOT MAGIC, IT\'S EXPERIENCE',
+  'manifesto.experience.text': 'We don\'t wait for the muse and don\'t believe in "divine gift." We learn to observe, steal like artists, and combine experience. Your imagination is a construction set, and we give you the pieces. The more you absorb, the richer your expressions will be. You don\'t need great imagination, you don\'t need experience — just grab the paint and give yourself freedom: smear, smudge, ruin, make a mess.',
+  'manifesto.play.title': '4. PLAY IS SERIOUS',
+  'manifesto.play.text': 'We reclaim our right to play. Play liberates: from the fear of starting, looking foolish, or making mistakes. In real play, the pressure of results disappears. You jump higher than your head because you forget that gravity (rules, grades, criticism) even exists. Art is a way to safely live through complex emotions, turning them into color, line, form, blot, construction, dance!',
+  'manifesto.zone.title': '5. ZONE OF PROXIMAL DEVELOPMENT',
+  'manifesto.zone.text': 'What you do today with us, tomorrow you\'ll do on your own. We are your "external scaffolding." We don\'t teach what\'s "correct" — we expand your boundaries of the familiar and the possible.',
+
   // Results
   'results.title': 'Class Results',
   'results.experience.title': 'Experience',

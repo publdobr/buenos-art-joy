@@ -18,6 +18,21 @@ export default {
   'philosophy.sometimesss': 'A veces nos enteramos de',
   'philosophy.all': 'Todo — ',
   
+  // Manifesto
+  'manifesto.title': 'Manifiesto',
+  'manifesto.intro': 'No somos una escuela de dibujo. Somos un laboratorio para reconstruir el mundo por dentro y por fuera. Mezclamos el caos creativo con la ciencia (Vygotsky está con nosotros🤟🏼) para alcanzar nuestra propia libertad.',
+  'manifesto.laws': 'Nuestras 5 leyes:',
+  'manifesto.method.title': '1. DES-ORDEN COMO MÉTODO',
+  'manifesto.method.text': 'Rechazamos la "imagen bonita" como fin en sí mismo. "Desorden" es un estado "sin forma", libertad de la forma congelada. Legalizamos las líneas torcidas, las manchas y el caos. No hay errores porque no hay reglas. Simplemente hacemos.',
+  'manifesto.pickle.title': '2. EL EFECTO DEL "PEPINO EN SALMUERA"',
+  'manifesto.pickle.text': 'El entorno lo decide todo. Vygotsky lo demostró: el desarrollo es social. Un pepino fresco que cae en salmuera no puede evitar volverse salado. Nuestro laboratorio es esa salmuera. Solo, puedes secarte. En el entorno correcto, inevitablemente te impregnas de creatividad. Creamos el contexto que convierte a la persona en creador. Juntos aprendemos a vivir en co-creación con el mundo.',
+  'manifesto.experience.title': '3. LA CREATIVIDAD NO ES MAGIA, ES EXPERIENCIA',
+  'manifesto.experience.text': 'No esperamos a la musa ni creemos en el "don divino". Aprendemos a observar, robar como artistas y combinar experiencias. Tu fantasía es un constructor y te damos las piezas. Cuanto más absorbes, más ricas serán tus manifestaciones. No necesitas gran imaginación, no necesitas experiencia, solo toma la pintura y date libertad: ensuciar, embadurnar, arruinar, hacer un desorden.',
+  'manifesto.play.title': '4. EL JUEGO ES COSA SERIA',
+  'manifesto.play.text': 'Nos devolvemos el derecho a jugar. El juego libera: del miedo a empezar, a parecer ridículo o a equivocarse. En el juego real desaparece la presión del resultado. Saltas más alto porque olvidas que la gravedad (reglas, calificaciones, crítica) existe. El arte es una forma segura de vivir emociones complejas, transformándolas en color, línea, forma, mancha, construcción, ¡danza!',
+  'manifesto.zone.title': '5. ZONA DE DESARROLLO PRÓXIMO',
+  'manifesto.zone.text': 'Lo que haces hoy con nosotros, mañana lo harás solo. Somos tus "apoyos externos". No enseñamos lo "correcto", expandimos tus límites de lo habitual y lo posible.',
+
   // Results
   'results.title': 'Resultado de las clases',
   'results.experience.title': 'Experiencia',
