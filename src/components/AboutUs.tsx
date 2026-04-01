@@ -11,10 +11,13 @@ const AboutUs = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-16 px-4 bg-background">
+    <section id="about" className="py-16 px-4 bg-gradient-to-b from-[hsl(195_100%_95%)] to-[hsl(195_80%_88%)]">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-5xl md:text-7xl font-black text-center mb-12 uppercase tracking-tighter rotate-[-1deg]">
-          {t("about.title")}
+          <span className="relative inline-block">
+            {t("about.title")}
+            <div className="absolute -bottom-2 left-0 right-0 h-3 bg-[hsl(var(--color-yellow))] -rotate-1 -z-10" />
+          </span>
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-12">
           {team.map((member) => (
