@@ -98,4 +98,11 @@ export default {
   
   // VideoSection
   'video.browserNotSupported': 'Your browser does not support video.',
+
+  // About Us
+  'about.title': 'Who We Are',
+  'about.polina': 'Polina',
+  'about.polinaRole': 'Child psychologist, biologist, mom of Vasilisa and Luli',
+  'about.nastya': 'Nastya',
+  'about.nastyaRole': 'Artist, mom of Luka and Agnia',
 };
