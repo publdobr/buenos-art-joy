@@ -102,6 +102,16 @@ const Philosophy = () => {
             </Accordion>
           </div>
         </div>
+
+        <div className="text-center mt-12">
+          <Button
+            onClick={() => window.open('https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29', '_blank')}
+            className="bg-[hsl(145_60%_45%)] hover:bg-[hsl(145_60%_38%)] text-white border-4 border-foreground shadow-[4px_4px_0_hsl(var(--foreground))] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_hsl(var(--foreground))] transition-all text-lg md:text-xl font-bold px-8 py-6 rounded-xl"
+          >
+            {t('hero.cta')}
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </div>
       </div>
     </section>
   );
