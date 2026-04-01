@@ -105,4 +105,7 @@ export default {
   'about.polinaRole': 'Детский психолог, биолог, мама Василисы и Лули',
   'about.nastya': 'Настя',
   'about.nastyaRole': 'Художница, мама Луки и Агнии',
+
+  // Menu
+  'menu.about': 'Кто мы',
 };
