@@ -1,4 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
