@@ -88,7 +88,7 @@ const Philosophy = () => {
                 <AccordionItem
                   key={item.key}
                   value={item.key}
-                  className="border-thick border-border bg-[hsl(330_80%_95%)] shadow-[4px_4px_0_hsl(0_0%_0%)] rounded-lg overflow-hidden px-4"
+                  className="border-2 border-[hsl(330_80%_90%)] bg-white shadow-[4px_4px_0_hsl(0_0%_0%)] rounded-lg overflow-hidden px-4"
                   style={{ transform: index % 2 === 0 ? "rotate(-0.5deg)" : "rotate(0.5deg)" }}
                 >
                   <AccordionTrigger className="text-left text-base sm:text-lg font-bold font-archivo hover:no-underline py-4 text-[hsl(220_80%_40%)]">
