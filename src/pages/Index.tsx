@@ -11,7 +11,7 @@ import MobileMenu from "@/components/MobileMenu";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <MobileMenu />
       <Hero />
       <Philosophy />
