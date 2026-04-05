@@ -6,7 +6,7 @@ const Contact = () => {
   const { t } = useLanguage();
   
   const telegramLink =
-    "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29";
+    "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20узнать%20подробности%20про%20«Безобразие»%20%3A%29";
 
   return (
     <section

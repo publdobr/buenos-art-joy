@@ -3,7 +3,7 @@ export default {
   'hero.subtitle': 'ASOCIACIÓN CREATIVA',
   'hero.title': 'DESORDEN',
   'hero.description': 'Divertido sin límites, libremente sin fronteras',
-  'hero.cta': 'Inscribirse a clase de prueba',
+  'hero.cta': 'Saber más',
   
   // Philosophy
   'philosophy.title': 'Filosofía',
@@ -48,15 +48,19 @@ export default {
   'schedule.eventsText': 'En tus celebraciones: ¡desde gender reveal y cumpleaños infantiles hasta eventos corporativos y aniversarios!',
   'schedule.therapy': 'Encuentros individuales',
   'schedule.therapyText': 'Una experiencia terapéutica de encuentro con tu niño interior',
-  'schedule.dates': 'Citas y grupos',
-  'schedule.datesText': 'Citas para parejas con pintura — exploraciones artísticas para grupos de amigos',
+  'schedule.dates': 'Citas para parejas con pintura',
+  'schedule.datesText': 'Una nueva experiencia sensorial para dos',
+  'schedule.friends': 'Exploraciones artísticas en grupo',
+  'schedule.friendsText': 'Una experiencia memorable para amigos',
   'schedule.photoshoots': '"Sesiones de fotos desordenadas"',
-  'schedule.photoshootsText': 'En colaboración con el fotógrafo Mark Boyarsky — personales, en pareja, familiares, con amigos, ¡de todo tipo!',
-  'schedule.photoshootsLink': 'Mark Boyarsky',
+  'schedule.photoshootsText1': 'En colaboración con el fotógrafo ',
+  'schedule.photoshootsLinkName': 'Mark Boyarsky',
+  'schedule.photoshootsText2': ' — personales, en pareja, familiares, con amigos, ¡de todo tipo!',
   'schedule.kids': 'Encuentros artísticos infantiles en verano',
   'schedule.kidsText': 'Encuentros creativos para niños en la temporada cálida',
   'schedule.kidsPaused': '¡en pausa hasta la primavera!',
-  'schedule.register': 'Inscribirse a clase de prueba',
+  'schedule.cta': 'Saber más',
+  'schedule.footer': '¡Escríbenos para conocer detalles sobre formatos, precios actuales y proponer tu propia idea!',
   
   // FAQ
   'faq.title': 'Preguntas / Respuestas',
