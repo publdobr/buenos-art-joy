@@ -3,7 +3,7 @@ export default {
   'hero.subtitle': 'ТВОРЧЕСКОЕ ОБЪЕДИНЕНИЕ',
   'hero.title': 'БЕЗОБРАЗИЕ',
   'hero.description': 'Безобразно весело, безгранично свободно',
-  'hero.cta': 'Записаться на пробное занятие',
+  'hero.cta': 'Узнать подробнее',
   
   // Philosophy
   'philosophy.title': 'Философия',
@@ -48,15 +48,19 @@ export default {
   'schedule.eventsText': 'На ваших праздниках: от гендер-пати и детского ДР до корпоративов и юбилеев!',
   'schedule.therapy': 'Индивидуальные встречи',
   'schedule.therapyText': 'Терапевтический опыт встречи с внутренним ребёнком',
-  'schedule.dates': 'Свидания и компании',
-  'schedule.datesText': 'Свидания для пар с краской — арт-исследования для компании друзей',
+  'schedule.dates': 'Свидания для пар с краской',
+  'schedule.datesText': 'Новый чувственный опыт для двоих',
+  'schedule.friends': 'Арт-исследования для компании',
+  'schedule.friendsText': 'Запоминающийся опыт для друзей',
   'schedule.photoshoots': '«Безобразные фотосессии»',
-  'schedule.photoshootsText': 'В коллаборации с фотографом Марком Боярским — личные, парные, семейные, дружеские, любые!',
-  'schedule.photoshootsLink': 'Марк Боярский',
+  'schedule.photoshootsText1': 'В коллаборации с фотографом ',
+  'schedule.photoshootsLinkName': 'Марком Боярским',
+  'schedule.photoshootsText2': ' — личные, парные, семейные, дружеские, любые!',
   'schedule.kids': 'Детские арт-встречи летом',
   'schedule.kidsText': 'Творческие встречи для детей в тёплое время года',
   'schedule.kidsPaused': 'на паузе до весны!',
-  'schedule.register': 'Записаться на пробное занятие',
+  'schedule.cta': 'Узнать подробнее',
+  'schedule.footer': 'Напишите нам, чтобы узнать подробности по форматам, актуальные цены и предложить свою идею!',
   
   // FAQ
   'faq.title': 'Вопрос / Ответ',

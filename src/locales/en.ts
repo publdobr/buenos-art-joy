@@ -3,7 +3,7 @@ export default {
   'hero.subtitle': 'CREATIVE ASSOCIATION',
   'hero.title': 'DISORDER',
   'hero.description': 'Outrageously fun, boundlessly free',
-  'hero.cta': 'Sign up for a trial class',
+  'hero.cta': 'Learn more',
   
   // Philosophy
   'philosophy.title': 'Philosophy',
@@ -48,15 +48,19 @@ export default {
   'schedule.eventsText': 'At your celebrations: from gender reveals and kids\' birthdays to corporate events and anniversaries!',
   'schedule.therapy': 'Individual Sessions',
   'schedule.therapyText': 'A therapeutic experience of meeting your inner child',
-  'schedule.dates': 'Dates & Groups',
-  'schedule.datesText': 'Paint dates for couples — art explorations for friend groups',
+  'schedule.dates': 'Paint Dates for Couples',
+  'schedule.datesText': 'A new sensory experience for two',
+  'schedule.friends': 'Art Explorations for Groups',
+  'schedule.friendsText': 'A memorable experience for friends',
   'schedule.photoshoots': '"Messy Photoshoots"',
-  'schedule.photoshootsText': 'In collaboration with photographer Mark Boyarsky — personal, couples, family, friends, any kind!',
-  'schedule.photoshootsLink': 'Mark Boyarsky',
+  'schedule.photoshootsText1': 'In collaboration with photographer ',
+  'schedule.photoshootsLinkName': 'Mark Boyarsky',
+  'schedule.photoshootsText2': ' — personal, couples, family, friends, any kind!',
   'schedule.kids': 'Kids Art Sessions in Summer',
   'schedule.kidsText': 'Creative sessions for kids during the warm season',
   'schedule.kidsPaused': 'on pause until spring!',
-  'schedule.register': 'Sign up for a trial class',
+  'schedule.cta': 'Learn more',
+  'schedule.footer': 'Write to us to learn about formats, current prices, and to suggest your own idea!',
   
   // FAQ
   'faq.title': 'Questions / Answers',

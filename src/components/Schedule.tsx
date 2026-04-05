@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, PartyPopper, Heart, Palette, Camera, Sun } from "lucide-react";
+import { ArrowRight, PartyPopper, Heart, Palette, Users, Camera, Sun } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Schedule = () => {
@@ -7,7 +7,7 @@ const Schedule = () => {
 
   const handleTelegramClick = () => {
     window.open(
-      "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20записаться%20на%20пробное%20занятие%20%3A%29",
+      "https://t.me/minpolska?text=Здравствуйте%21%20Хочу%20узнать%20подробности%20про%20«Безобразие»%20%3A%29",
       "_blank",
       "noopener,noreferrer"
     );
@@ -39,16 +39,21 @@ const Schedule = () => {
       rotation: "rotate(-0.5deg)",
     },
     {
-      icon: Camera,
-      title: t('schedule.photoshoots'),
-      text: t('schedule.photoshootsText'),
+      icon: Users,
+      title: t('schedule.friends'),
+      text: t('schedule.friendsText'),
       color: "text-playful-orange",
       bgAccent: "hsl(var(--color-orange))",
       rotation: "rotate(1.5deg)",
-      link: {
-        url: "https://www.instagram.com/markboyarsky/",
-        label: t('schedule.photoshootsLink'),
-      },
+    },
+    {
+      icon: Camera,
+      title: t('schedule.photoshoots'),
+      text: null,
+      richText: true,
+      color: "text-playful-cyan",
+      bgAccent: "hsl(var(--color-cyan))",
+      rotation: "rotate(-1deg)",
     },
     {
       icon: Sun,
@@ -56,7 +61,7 @@ const Schedule = () => {
       text: t('schedule.kidsText'),
       color: "text-playful-red",
       bgAccent: "hsl(var(--color-red))",
-      rotation: "rotate(-1deg)",
+      rotation: "rotate(0.5deg)",
       paused: true,
       pausedText: t('schedule.kidsPaused'),
     },
@@ -88,7 +93,7 @@ const Schedule = () => {
             return (
               <div
                 key={index}
-                className={`relative p-6 bg-white border-thick border-border shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all rounded-lg ${index === formats.length - 1 && formats.length % 2 !== 0 ? 'sm:col-span-2 sm:max-w-md sm:mx-auto' : ''}`}
+                className="relative p-6 bg-white border-thick border-border shadow-[6px_6px_0_hsl(0_0%_0%)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_hsl(0_0%_0%)] transition-all rounded-lg"
                 style={{ transform: item.rotation }}
               >
                 {/* Accent dot */}
@@ -107,22 +112,24 @@ const Schedule = () => {
                   </h3>
                 </div>
 
-                <p className="text-base font-medium font-work-sans leading-relaxed">
-                  {item.text}
-                  {item.link && (
-                    <>
-                      {' '}
-                      <a
-                        href={item.link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline text-playful-blue hover:text-playful-bright-blue transition-colors font-bold"
-                      >
-                        {item.link.label}
-                      </a>
-                    </>
-                  )}
-                </p>
+                {item.richText ? (
+                  <p className="text-base font-medium font-work-sans leading-relaxed">
+                    {t('schedule.photoshootsText1')}
+                    <a
+                      href="https://www.instagram.com/markboyarsky/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-playful-blue hover:text-playful-bright-blue transition-colors font-bold"
+                    >
+                      {t('schedule.photoshootsLinkName')}
+                    </a>
+                    {t('schedule.photoshootsText2')}
+                  </p>
+                ) : (
+                  <p className="text-base font-medium font-work-sans leading-relaxed">
+                    {item.text}
+                  </p>
+                )}
 
                 {item.paused && (
                   <span
@@ -140,6 +147,11 @@ const Schedule = () => {
           })}
         </div>
 
+        {/* Footer text */}
+        <p className="text-center text-base sm:text-lg font-medium font-work-sans text-foreground/80">
+          {t('schedule.footer')}
+        </p>
+
         {/* CTA Button */}
         <div className="animate-in fade-in slide-in-from-bottom duration-700 delay-300 px-4 text-center">
           <Button
@@ -148,7 +160,7 @@ const Schedule = () => {
             onClick={handleTelegramClick}
             className="group relative text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-4 md:py-6 bg-playful-blue hover:bg-playful-bright-blue border-thick border-border shadow-block hover:scale-105 transition-all duration-500 font-bold text-white"
           >
-            {t('schedule.register')}
+            {t('schedule.cta')}
             <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6 group-hover:translate-x-1 transition-transform" />
             <div className="hidden sm:block absolute -top-3 -right-3 w-6 h-6 text-[hsl(var(--color-red))] text-3xl">
               ✦
