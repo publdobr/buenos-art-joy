@@ -87,7 +87,7 @@ export default {
   // Mobile Menu
   'menu.home': 'Главная',
   'menu.philosophy': 'Философия',
-  'menu.format': 'Формат',
+  'menu.format': 'Форматы',
   'menu.pricing': 'Цены',
   'menu.faq': 'FAQ',
   'menu.contact': 'Контакты',

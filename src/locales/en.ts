@@ -87,7 +87,7 @@ export default {
   // Mobile Menu
   'menu.home': 'Home',
   'menu.philosophy': 'Philosophy',
-  'menu.format': 'Format',
+  'menu.format': 'Formats',
   'menu.pricing': 'Pricing',
   'menu.faq': 'FAQ',
   'menu.contact': 'Contacts',
